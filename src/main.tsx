@@ -2,7 +2,7 @@ import ReactDOM from "react-dom/client";
 import { NotFoundRoute, RouterProvider, createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 import GlobalProvider from "./Providers/global-provider";
-import '../dist/main.css'
+import './main.css'
 import { Route as rootRoute } from './routes/__root'
 
 const notFoundRoute = new NotFoundRoute({
