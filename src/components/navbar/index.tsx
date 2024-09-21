@@ -3,14 +3,14 @@ import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
-import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import { Link } from "@tanstack/react-router";
 import NavbarLink from "./navbar-link";
 import { Stack } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
+import PeopleIcon from "@mui/icons-material/People";
+import MusicNoteIcon from "@mui/icons-material/MusicNote";
+import MovieIcon from "@mui/icons-material/Movie";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -63,6 +63,7 @@ export default function SearchAppBar() {
           borderBottomWidth: "1px",
           borderStyle: "solid",
         }}
+        position="relative"
       >
         <Toolbar>
           {/* <IconButton
@@ -83,17 +84,17 @@ export default function SearchAppBar() {
               flexGrow: 1,
             }}
           >
-            <NavbarLink label="Home" to="/" />
-            <NavbarLink label="People" to="/about" />
-            <NavbarLink label="Movies" to="/movies" />
-            <NavbarLink label="Songs" to="/songs" />
+            <NavbarLink Icon={HomeIcon} label="Início" to="/" />
+            <NavbarLink Icon={PeopleIcon} label="Pessoas" to="/people" />
+            <NavbarLink Icon={MovieIcon} label="Filmes" to="/movies" />
+            <NavbarLink Icon={MusicNoteIcon} label="Músicas" to="/songs" />
           </Stack>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Pesquisar..."
               inputProps={{ "aria-label": "search" }}
             />
           </Search>

@@ -1,13 +1,16 @@
-import * as React from 'react'
-import { createFileRoute } from '@tanstack/react-router'
-export const Route = createFileRoute('/')({
+import { createFileRoute } from "@tanstack/react-router";
+import PeopleForm from "../features/people/components/add-people-form";
+import { Container } from "@mui/material";
+export const Route = createFileRoute("/")({
   component: HomeComponent,
-})
+});
 
 function HomeComponent() {
   return (
-    <div className="bg-red-400">
-
+    <div className="">
+      <Container maxWidth={"sm"}>
+        <PeopleForm />
+      </Container>
     </div>
-  )
+  );
 }

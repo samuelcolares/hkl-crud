@@ -11,6 +11,13 @@ export default {
       fontFamily: {
         inter: ["Inter", "sans-serif"],
       },
+      backgroundColor: {
+        primary: "#494E55",
+        disabled: "rgb(255 255 255 / 0.3)",
+      },
+      borderColor: {
+        primary: "#494E55",
+      },
     },
   },
   important: "#root",
