@@ -7,7 +7,7 @@ import {
 import TextField from "@mui/material/TextField";
 import { maskCPF } from "@/src/utils";
 import { z } from "zod";
-import { peopleSchema } from "@/src/features/people/components/add-people-form";
+import { peopleSchema } from "@/src/features/people/schemas";
 
 type FormInputProps = {
   name: string;

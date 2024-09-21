@@ -1,54 +1,66 @@
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+// General
 import * as z from "zod";
-import { validCPF } from "@/src/utils";
-import systemMessages from "@/src/utils/constants";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+// Hooks
+import { useForm } from "react-hook-form";
+import { useLoading } from "@/src/hooks/convinient-states.hooks";
+
+// Components
 import { Input, MaskCPFInput } from "@/src/components/ui/input";
 import { Box, Button } from "@mui/material";
-import { useLoading } from "@/src/hooks/convinient-states.hooks";
-import toast from "react-hot-toast";
+import LoaderCircle from "@/src/components/ui/icons/loader-circle";
+import AddIcon from "@mui/icons-material/PersonAddAlt1";
+import EditIcon from "@mui/icons-material/Edit";
 
-export const peopleSchema = z.object({
-  name: z
-    .string({ required_error: systemMessages.required.name })
-    .min(4, { message: systemMessages.minCharacteres.name }),
-  cpf: z
-    .string({ required_error: systemMessages.required.cpf })
-    .refine(
-      (fiscalId: string) =>
-        validCPF(fiscalId.replace(/\./g, "").replace(/-/g, "")),
-      systemMessages.error.cpf
-    ),
-  email: z.string().email(),
-  phone: z.string(),
-});
+// Utils & Services
+import { addPersonToDatabase } from "../../services/add-person-to-database";
 
-const PeopleForm = () => {
+// Types & Schemas
+import { Person } from "../../types/person";
+import { peopleSchema } from "../../schemas";
+
+const emptyValues: z.infer<typeof peopleSchema> = {
+  cpf: "",
+  email: "",
+  name: "",
+  phone: "",
+};
+
+const PeopleForm = ({ defaultValues }: { defaultValues?: Person }) => {
   const { loading, startLoading, stopLoading } = useLoading();
   const { handleSubmit, control, setValue } = useForm<
     z.infer<typeof peopleSchema>
   >({
     resolver: zodResolver(peopleSchema),
-    defaultValues: {
-      cpf: "607.159.353-05",
-      name: "",
-    },
+    defaultValues: defaultValues
+      ? {
+          name: defaultValues.name,
+          email: defaultValues.email,
+          cpf: defaultValues.cpf,
+          phone: defaultValues.phone,
+        }
+      : emptyValues,
   });
+
+  const buttonLabel = defaultValues ? "Editar" : "Adicionar";
+  const Icon = defaultValues ? <EditIcon /> : <AddIcon />;
 
   const onSubmit = async (values: z.infer<typeof peopleSchema>) => {
     try {
       startLoading();
 
-      await toast.promise(new Promise((resolve) => setTimeout(resolve, 3000)), {
-        loading: "Carregando",
-        success: "Salvo",
-        error: "Erro",
-      });
+      if (defaultValues) {
+        //TODO: await EditPersonOnDatabase(values);
+      }
 
+      const person = await addPersonToDatabase(values);
+      // TODO: Add to global context API to state manegement
+    } finally {
       stopLoading();
-    } catch (error) {}
-    console.log(values);
+    }
   };
+
   return (
     <Box
       component={"form"}
@@ -71,16 +83,14 @@ const PeopleForm = () => {
         type="submit"
         variant="contained"
         disabled={loading}
-        endIcon={loading ? <LoaderCircle /> : <AddIcon />}
+        endIcon={loading ? <LoaderCircle /> : Icon}
         fullWidth
         className="disabled:text-white disabled:opacity-70 disabled:bg-white/30 bg-primary"
       >
-        Adicionar
+        {buttonLabel}
       </Button>
     </Box>
   );
 };
 
 export default PeopleForm;
-import AddIcon from "@mui/icons-material/PersonAddAlt1";
-import LoaderCircle from "@/src/components/ui/icons/loader-circle";
