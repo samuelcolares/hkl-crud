@@ -18,6 +18,9 @@ export default {
       borderColor: {
         primary: "#494E55",
       },
+      textColor: {
+        primary: "#494E55",
+      },
     },
   },
   important: "#root",

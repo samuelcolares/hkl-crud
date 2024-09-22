@@ -46,7 +46,21 @@ export function maskCPF(value: string) {
     .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
 }
 
+export const maskPhoneNumber = (value: string | undefined) => {
+  if (!value) return "";
+
+  return value
+    .replace(/[\D]/g, "")
+    .replace(/(\d{2})(\d)/, "($1) $2")
+    .replace(/(\d{5})(\d)/, "$1-$2")
+    .replace(/(-\d{4})(\d+?)/, "$1");
+};
+
 export const simulateServerDelay = () => {
   const delay = Math.floor(Math.random() * 2000) + 1000;
   return new Promise((resolve) => setTimeout(resolve, delay));
+};
+
+export const getRandomNumber = ({ min, max }: { min: number; max: number }) => {
+  return Math.floor(Math.random() * (max - min) + min);
 };

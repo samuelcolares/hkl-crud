@@ -1,23 +1,22 @@
-import { z } from "zod";
-import { peopleSchema } from "../schemas";
 import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
 import { Person } from "../types";
 import { simulateServerDelay } from "@/src/utils";
 
-export const addPersonToDatabase = async (
-  person: z.infer<typeof peopleSchema>
-) => {
+export const editPersonOnDatabase = async (person: Person) => {
   try {
     const withDelay = async () => {
       await simulateServerDelay();
-      return await axios.post("http://localhost:5000/people", person);
+      return await axios.patch(
+        `http://localhost:5000/people/${person.id}`,
+        person
+      );
     };
 
     const data = await toast.promise(withDelay(), {
-      loading: `Salvando informações...`,
-      success: `Informações salvas no banco de dados!`,
-      error: `Erro ao adicionar ${person.name} ao banco de dados.`,
+      loading: `Editando informações...`,
+      success: `Informações editadas com sucesso!`,
+      error: `Erro ao editar ${person.name} no banco de dados.`,
     });
 
     return data.data as Person;

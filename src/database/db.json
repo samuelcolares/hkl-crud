@@ -1,3 +1,87 @@
 {
-  "people": []
+  "avatars": [
+    {
+      "id": "avatar-1",
+      "url": "/src/public/avatars/avatar-1.webp"
+    },
+    {
+      "id": "avatar-2",
+      "url": "/src/public/avatars/avatar-2.webp"
+    },
+    {
+      "id": "avatar-3",
+      "url": "/src/public/avatars/avatar-3.webp"
+    },
+    {
+      "id": "avatar-4",
+      "url": "/src/public/avatars/avatar-4.webp"
+    },
+    {
+      "id": "avatar-5",
+      "url": "/src/public/avatars/avatar-5.webp"
+    },
+    {
+      "id": "avatar-6",
+      "url": "/src/public/avatars/avatar-6.webp"
+    },
+    {
+      "id": "avatar-7",
+      "url": "/src/public/avatars/avatar-7.webp"
+    },
+    {
+      "id": "avatar-8",
+      "url": "/src/public/avatars/avatar-8.webp"
+    },
+    {
+      "id": "avatar-9",
+      "url": "/src/public/avatars/avatar-9.webp"
+    },
+    {
+      "id": "avatar-10",
+      "url": "/src/public/avatars/avatar-10.webp"
+    },
+    {
+      "id": "avatar-11",
+      "url": "/src/public/avatars/avatar-11.webp"
+    },
+    {
+      "id": "avatar-12",
+      "url": "/src/public/avatars/avatar-12.webp"
+    },
+    {
+      "id": "avatar-13",
+      "url": "/src/public/avatars/avatar-13.webp"
+    },
+    {
+      "id": "avatar-14",
+      "url": "/src/public/avatars/avatar-14.webp"
+    },
+    {
+      "id": "avatar-15",
+      "url": "/src/public/avatars/avatar-15.webp"
+    },
+    {
+      "id": "avatar-16",
+      "url": "/src/public/avatars/avatar-16.webp"
+    },
+    {
+      "id": "avatar-17",
+      "url": "/src/public/avatars/avatar-17.webp"
+    },
+    {
+      "id": "avatar-18",
+      "url": "/src/public/avatars/avatar-18.webp"
+    },
+    {
+      "id": "avatar-19",
+      "url": "/src/public/avatars/avatar-19.webp"
+    },
+    {
+      "id": "avatar-20",
+      "url": "/src/public/avatars/avatar-20.webp"
+    }
+  ],
+  "people": [
+
+  ]
 }

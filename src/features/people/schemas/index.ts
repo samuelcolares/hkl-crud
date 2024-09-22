@@ -15,4 +15,5 @@ export const peopleSchema = z.object({
     ),
   email: z.string().email(),
   phone: z.string(),
+  avatarUrl: z.string(),
 });

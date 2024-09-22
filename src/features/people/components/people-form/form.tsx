@@ -5,19 +5,19 @@ import { zodResolver } from "@hookform/resolvers/zod";
 // Hooks
 import { useForm } from "react-hook-form";
 import { useLoading } from "@/src/hooks/convinient-states.hooks";
+import usePeople from "../../hooks/use-people.hook";
+import useAvatars from "../../hooks/use-avatars.hook";
 
 // Components
-import { Input, MaskCPFInput } from "@/src/components/ui/input";
-import { Box, Button } from "@mui/material";
+import { Input, MaskInput } from "@/src/components/ui/input";
+import { Box, Button, Stack } from "@mui/material";
 import LoaderCircle from "@/src/components/ui/icons/loader-circle";
 import AddIcon from "@mui/icons-material/PersonAddAlt1";
 import EditIcon from "@mui/icons-material/Edit";
-
-// Utils & Services
-import { addPersonToDatabase } from "../../services/add-person-to-database";
+import AvatarsDialog from "./avatar-dialog";
 
 // Types & Schemas
-import { Person } from "../../types/person";
+import { Person } from "../../types";
 import { peopleSchema } from "../../schemas";
 
 const emptyValues: z.infer<typeof peopleSchema> = {
@@ -25,9 +25,12 @@ const emptyValues: z.infer<typeof peopleSchema> = {
   email: "",
   name: "",
   phone: "",
+  avatarUrl: "",
 };
 
 const PeopleForm = ({ defaultValues }: { defaultValues?: Person }) => {
+  const { avatars, status } = useAvatars();
+  const { addPerson, editPerson } = usePeople();
   const { loading, startLoading, stopLoading } = useLoading();
   const { handleSubmit, control, setValue } = useForm<
     z.infer<typeof peopleSchema>
@@ -39,9 +42,14 @@ const PeopleForm = ({ defaultValues }: { defaultValues?: Person }) => {
           email: defaultValues.email,
           cpf: defaultValues.cpf,
           phone: defaultValues.phone,
+          avatarUrl: defaultValues.avatarUrl,
         }
       : emptyValues,
   });
+
+  const setAvatarUrl = (url: string) => {
+    setValue("avatarUrl", url);
+  };
 
   const buttonLabel = defaultValues ? "Editar" : "Adicionar";
   const Icon = defaultValues ? <EditIcon /> : <AddIcon />;
@@ -51,11 +59,13 @@ const PeopleForm = ({ defaultValues }: { defaultValues?: Person }) => {
       startLoading();
 
       if (defaultValues) {
-        //TODO: await EditPersonOnDatabase(values);
+        return await editPerson({
+          id: defaultValues.id,
+          ...values,
+        });
       }
 
-      const person = await addPersonToDatabase(values);
-      // TODO: Add to global context API to state manegement
+      return await addPerson(values);
     } finally {
       stopLoading();
     }
@@ -68,16 +78,33 @@ const PeopleForm = ({ defaultValues }: { defaultValues?: Person }) => {
       sx={{ border: 1, borderColor: "#494E55" }}
       className="space-y-4 p-4 rounded-md backdrop-blur-sm mt-8 border-2 border-primary"
     >
-      <Input control={control} name="name" label="Nome" />
-      <Input control={control} name="email" label="E-mail" />
+      <Stack direction={"row"} className="items-end" spacing={4}>
+        <AvatarsDialog
+          avatars={avatars}
+          status={status}
+          setAvatarUrl={setAvatarUrl}
+          defaultAvatar={defaultValues?.avatarUrl}
+        />
+        <Stack className="gap-4 flex-1">
+          <Input control={control} name="name" label="Nome" />
+          <Input control={control} name="email" label="E-mail" />
+        </Stack>
+      </Stack>
       <Box component={"div"} className="flex gap-4">
-        <MaskCPFInput
+        <MaskInput
           control={control}
           name="cpf"
           label="CPF"
+          inputVariant="cpf"
           setValue={setValue}
         />
-        <Input control={control} name="phone" label="Telefone" />
+        <MaskInput
+          control={control}
+          name="phone"
+          label="Telefone"
+          inputVariant="phoneNumber"
+          setValue={setValue}
+        />
       </Box>
       <Button
         type="submit"

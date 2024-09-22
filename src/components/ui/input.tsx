@@ -5,7 +5,7 @@ import {
   Control,
 } from "react-hook-form";
 import TextField from "@mui/material/TextField";
-import { maskCPF } from "@/src/utils";
+import { maskCPF, maskPhoneNumber } from "@/src/utils";
 import { z } from "zod";
 import { peopleSchema } from "@/src/features/people/schemas";
 
@@ -51,11 +51,65 @@ export const Input = ({
   );
 };
 
-type MaskCPFInputProps<T extends FieldValues> = FormInputProps & {
+type MaskInputs<T extends FieldValues> = FormInputProps & {
   setValue: UseFormSetValue<T>;
+  inputVariant: "cpf" | "phoneNumber";
 };
 
-export const MaskCPFInput = ({
+export const MaskInput = ({
+  name,
+  control,
+  label,
+  variant = "standard",
+  disabled = false,
+  size = "small",
+  inputVariant,
+  setValue,
+}: MaskInputs<z.infer<typeof peopleSchema>>) => {
+  const handleMaskCPF = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const value = e.target.value;
+    if (value.length > 18) return;
+    return setValue("cpf", maskCPF(value));
+  };
+
+  const handleMaskPhoneNumber = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const value = e.target.value;
+    if (value.length > 15) return;
+    return setValue("phone", maskPhoneNumber(value));
+  };
+
+  return (
+    <Controller
+      name={name}
+      control={control}
+      render={({
+        field: { onChange, value },
+        fieldState: { error },
+        formState,
+      }) => (
+        <TextField
+          helperText={error ? error.message : null}
+          size={size}
+          error={!!error}
+          onChange={
+            inputVariant === "cpf" ? handleMaskCPF : handleMaskPhoneNumber
+          }
+          value={value}
+          fullWidth
+          label={label}
+          variant={variant}
+          disabled={disabled}
+        />
+      )}
+    />
+  );
+};
+
+export const MaskPhoneNumberInput = ({
   name,
   control,
   label,
@@ -63,7 +117,7 @@ export const MaskCPFInput = ({
   disabled = false,
   size = "small",
   setValue,
-}: MaskCPFInputProps<z.infer<typeof peopleSchema>>) => {
+}: MaskInputs<z.infer<typeof peopleSchema>>) => {
   return (
     <Controller
       name={name}
@@ -79,8 +133,8 @@ export const MaskCPFInput = ({
           error={!!error}
           onChange={(e) => {
             const value = e.target.value;
-            if (value.length > 18) return;
-            return setValue("cpf", maskCPF(value));
+            if (value.length > 15) return;
+            return setValue("phone", maskPhoneNumber(value));
           }}
           value={value}
           fullWidth

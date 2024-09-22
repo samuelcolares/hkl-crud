@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.css-buhf99-MuiDataGrid-root,
+.MuiDataGrid-container--top [role="row"] {
+  background: transparent !important;
+}

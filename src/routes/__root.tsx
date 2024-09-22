@@ -11,10 +11,10 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   return (
-    <Box component={"div"} className="min-h-screen relative z-10">
+    <Box component={"div"} className="relative z-10 pb-10">
       <Navbar />
       <Outlet />
-      <Box className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
+      <Box className="fixed top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
       <BackgroundBeams />
       <Toaster />
     </Box>
