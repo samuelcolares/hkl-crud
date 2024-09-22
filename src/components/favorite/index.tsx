@@ -3,24 +3,33 @@ import StarIcon from "@mui/icons-material/Grade";
 import { useStore } from "@/src/Providers/store-provider";
 import { cn } from "@/src/utils";
 import { Person } from "@/src/features/people/types";
+import { Song } from "@/src/features/songs/types";
 
 type Favorite =
   | { type: "person"; item: Person }
   | { type: "movies"; item: {} }
-  | { type: "songs"; item: {} };
+  | { type: "songs"; item: Song };
 
 const FavoriteIconButton = (payload: Favorite) => {
   const { item, type } = payload;
-  const { favoritePerson, isPersonFavorited } = useStore();
+  const { favoritePerson, isPersonFavorited, isSongFavorited, favoriteSong } =
+    useStore();
   const handleClick = () => {
     if (type === "person") {
       return favoritePerson(item);
+    }
+    if (type === "songs") {
+      return favoriteSong(item);
     }
   };
 
   const checkFavorite = () => {
     if (type === "person") {
       return isPersonFavorited(item);
+    }
+
+    if (type === "songs") {
+      return isSongFavorited(item);
     }
 
     return false;

@@ -5,14 +5,23 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import usePeople from "../../hooks/use-people.hook";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { useLoading } from "@/src/hooks/convinient-states.hooks";
 import LoaderCircle from "@/src/components/ui/icons/loader-circle";
+import useSongs from "@/src/features/songs/hooks/use-songs.hook";
+import { Type } from "@/src/types";
+import usePeople from "@/src/features/people/hooks/use-people.hook";
 
-export default function DeletePersonDialog({ personId }: { personId: string }) {
+type DeleteDialogProps = {
+  id: string;
+  type: Type;
+};
+
+export const DeleteDialog: React.FC<DeleteDialogProps> = ({ id, type }) => {
+  const { deleteSong } = useSongs();
+  // const { deleteMovie } = useMovies();
   const { deletePerson } = usePeople();
   const { loading, startLoading, stopLoading } = useLoading();
   const [open, setOpen] = React.useState(false);
@@ -28,11 +37,17 @@ export default function DeletePersonDialog({ personId }: { personId: string }) {
   const deleteAndClose = async () => {
     try {
       startLoading();
-      await deletePerson(personId);
+      if (type === "songs") return await deleteSong(id);
+      if (type === "people") return await deletePerson(id);
+      // if (type === "movies") return await deleteMovie(id);
     } finally {
       setOpen(false);
+      stopLoading();
     }
   };
+
+  const label =
+    type === "people" ? "pessoa" : type === "songs" ? "música" : "filme";
 
   return (
     <React.Fragment>
@@ -72,7 +87,7 @@ export default function DeletePersonDialog({ personId }: { personId: string }) {
             id="alert-dialog-description"
             className="text-white"
           >
-            Deseja deletar essa pessoa do banco de dados? essa ação é
+            Deseja deletar essa {label} do banco de dados? essa ação é
             irreversível.
           </DialogContentText>
         </DialogContent>
@@ -99,4 +114,4 @@ export default function DeletePersonDialog({ personId }: { personId: string }) {
       </Dialog>
     </React.Fragment>
   );
-}
+};

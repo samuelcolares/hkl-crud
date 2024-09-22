@@ -43,3 +43,27 @@ export const localizedTextsMap: Partial<GridLocaleText> = {
   noRowsLabel: "Sem resultado.",
   noResultsOverlayLabel: "Sem resultados.",
 };
+
+export const musicGenres = [
+  "Rock",
+  "Rap",
+  "Pop",
+  "Hip-Hop",
+  "Jazz",
+  "Blues",
+  "Classical",
+  "Reggae",
+  "Country",
+  "Electronic",
+  "Funk",
+  "Soul",
+  "Metal",
+  "Punk",
+  "R&B",
+  "Latin",
+  "Ska",
+  "Disco",
+  "Folk",
+  "Gospel",
+  "Indie",
+];

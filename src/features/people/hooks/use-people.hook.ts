@@ -1,7 +1,7 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { getPeople } from "../queries/get-people";
 import { Person } from "../types";
-import { peopleSchema } from "../schemas";
+import { personSchema } from "../schemas";
 import { z } from "zod";
 import { addPersonToDatabase } from "../services/add-person-to-database";
 import { editPersonOnDatabase } from "../services/edit-person-on-database";
@@ -20,7 +20,7 @@ const usePeople = () => {
     staleTime: Infinity,
   });
 
-  const addPerson = async (person: z.infer<typeof peopleSchema>) => {
+  const addPerson = async (person: z.infer<typeof personSchema>) => {
     const newPerson = await addPersonToDatabase(person);
     addPersonLocal(newPerson);
   };

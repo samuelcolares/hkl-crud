@@ -3,18 +3,18 @@ import { Person } from "../../types";
 import * as React from "react";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
-import PeopleForm from "./form";
+import PersonForm from "./form";
 import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import PersonIcon from "@mui/icons-material/PersonAddAlt1";
 
-type PeopleDialogProps = {
+type PersonDialogProps = {
   defaultValues?: Person;
   variant: "add" | "edit";
   className?: string;
 };
 
-const PeopleDialog: React.FC<PeopleDialogProps> = ({
+const PersonDialog: React.FC<PersonDialogProps> = ({
   defaultValues,
   variant,
   className,
@@ -65,10 +65,10 @@ const PeopleDialog: React.FC<PeopleDialogProps> = ({
           },
         }}
       >
-        <PeopleForm defaultValues={defaultValues} />
+        <PersonForm defaultValues={defaultValues} />
       </Dialog>
     </React.Fragment>
   );
 };
 
-export default PeopleDialog;
+export default PersonDialog;

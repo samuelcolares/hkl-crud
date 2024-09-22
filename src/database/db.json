@@ -83,144 +83,341 @@
   ],
   "people": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Angela Jackson",
       "email": "angela.jackson@example.com",
       "phone": "(14) 98033-8466",
+      "cpf": "738.309.390-94",
       "avatarUrl": "/src/public/avatars/avatar-1.webp"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Jessica Parker",
       "email": "jessica.parker@example.com",
       "phone": "(25) 95442-2979",
+      "cpf": "270.004.030-98",
       "avatarUrl": "/src/public/avatars/avatar-2.webp"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Gabriela Miller",
       "email": "gabriela.miller@example.com",
       "phone": "(65) 91857-3775",
+      "cpf": "159.522.400-97",
       "avatarUrl": "/src/public/avatars/avatar-3.webp"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Craig Jacobs",
       "email": "craig.jacobs@example.com",
       "phone": "(42) 93662-8695",
+      "cpf": "431.166.360-95",
       "avatarUrl": "/src/public/avatars/avatar-4.webp"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Calvin Woods",
       "email": "calvin.woods@example.com",
       "phone": "(52) 99071-5281",
+      "cpf": "971.444.090-42",
       "avatarUrl": "/src/public/avatars/avatar-5.webp"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Richard Kelley",
       "email": "richard.kelley@example.com",
       "phone": "(56) 92948-7151",
+      "cpf": "366.519.400-82",
       "avatarUrl": "/src/public/avatars/avatar-6.webp"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Diane Thomas",
       "email": "diane.thomas@example.com",
       "phone": "(17) 99321-1700",
+      "cpf": "059.987.120-21",
       "avatarUrl": "/src/public/avatars/avatar-7.webp"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Elizabeth Bush",
       "email": "elizabeth.bush@example.com",
       "phone": "(38) 96543-4003",
+      "cpf": "539.706.150-62",
       "avatarUrl": "/src/public/avatars/avatar-8.webp"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Laurie Baker",
       "email": "laurie.baker@example.com",
       "phone": "(18) 92134-1142",
+      "cpf": "473.123.860-91",
       "avatarUrl": "/src/public/avatars/avatar-9.webp"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Timothy Townsend",
       "email": "timothy.townsend@example.com",
       "phone": "(87) 93872-5578",
+      "cpf": "880.841.290-31",
       "avatarUrl": "/src/public/avatars/avatar-10.webp"
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Destiny Murray",
       "email": "destiny.murray@example.com",
       "phone": "(56) 97019-8052",
+      "cpf": "703.009.060-80",
       "avatarUrl": "/src/public/avatars/avatar-11.webp"
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Lydia Lopez",
       "email": "lydia.lopez@example.com",
       "phone": "(66) 94807-4748",
+      "cpf": "852.711.420-86",
       "avatarUrl": "/src/public/avatars/avatar-12.webp"
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Bradley Carpenter",
       "email": "bradley.carpenter@example.com",
       "phone": "(15) 91528-4468",
+      "cpf": "380.884.360-87",
       "avatarUrl": "/src/public/avatars/avatar-13.webp"
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Nicholas Nguyen",
       "email": "nicholas.nguyen@example.com",
       "phone": "(71) 98880-9903",
+      "cpf": "098.726.800-78",
       "avatarUrl": "/src/public/avatars/avatar-14.webp"
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Mrs. Amanda Ibarra",
       "email": "mrs..amanda@example.com",
       "phone": "(40) 97227-3481",
+      "cpf": "004.277.550-77",
       "avatarUrl": "/src/public/avatars/avatar-15.webp"
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Pamela Bailey",
       "email": "pamela.bailey@example.com",
       "phone": "(70) 92563-2843",
+      "cpf": "666.061.700-01",
       "avatarUrl": "/src/public/avatars/avatar-16.webp"
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "Cindy Martinez",
       "email": "cindy.martinez@example.com",
       "phone": "(59) 95385-6573",
+      "cpf": "175.530.040-90",
       "avatarUrl": "/src/public/avatars/avatar-17.webp"
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "Erica Simpson",
       "email": "erica.simpson@example.com",
       "phone": "(25) 92319-8109",
+      "cpf": "920.310.210-87",
       "avatarUrl": "/src/public/avatars/avatar-18.webp"
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "Joy Jackson",
       "email": "joy.jackson@example.com",
       "phone": "(26) 93293-9248",
+      "cpf": "923.409.970-20",
       "avatarUrl": "/src/public/avatars/avatar-19.webp"
     },
     {
-      "id": 20,
+      "id": "20",
       "name": "Michelle Miller",
       "email": "michelle.miller@example.com",
       "phone": "(71) 97956-4757",
+      "cpf": "846.731.290-40",
       "avatarUrl": "/src/public/avatars/avatar-20.webp"
+    }
+  ],
+  "movies": [],
+  "songs": [
+    {
+      "id": "ac7fad56",
+      "name": "Skyfall",
+      "genre": "Pop",
+      "singerOrBand": "Adele"
+    },
+    {
+      "id": "21cb0f33",
+      "name": "Turning Tables",
+      "genre": "Pop",
+      "singerOrBand": "Adele"
+    },
+    {
+      "id": "ae08aa54",
+      "name": "Nightmare",
+      "genre": "Metal",
+      "singerOrBand": "Avenged Sevenfold"
+    },
+    {
+      "id": "bbf79814",
+      "name": "Perfect Strangers",
+      "genre": "Rock",
+      "singerOrBand": "Deep Purple"
+    },
+    {
+      "id": "f59d4bab",
+      "name": "Soldier of Fortune",
+      "genre": "Rock",
+      "singerOrBand": "Deep Purple"
+    },
+    {
+      "id": "f0060b08",
+      "name": "Brothers in Arms",
+      "genre": "Rock",
+      "singerOrBand": "Dire Straits"
+    },
+    {
+      "id": "846568ef",
+      "name": "Walk of life",
+      "genre": "Rock",
+      "singerOrBand": "Dire Straits"
+    },
+    {
+      "id": "1eb33fc7",
+      "name": "Didn't Cha Know",
+      "genre": "R&B",
+      "singerOrBand": "Erykah Badu"
+    },
+    {
+      "id": "32a340c1",
+      "name": "Orange Moon",
+      "genre": "R&B",
+      "singerOrBand": "Erykah Badu"
+    },
+    {
+      "id": "2747215e",
+      "name": "Appletree",
+      "genre": " R&B",
+      "singerOrBand": "Erykah Badu"
+    },
+    {
+      "id": "197436ef",
+      "name": "West Coast",
+      "genre": "Pop",
+      "singerOrBand": "Lana Del Rey"
+    },
+    {
+      "id": "f5ebd523",
+      "name": "Man i is",
+      "genre": "Rap",
+      "singerOrBand": "Logic"
+    },
+    {
+      "id": "0a83a74c",
+      "name": "Under Presure",
+      "genre": "Rap",
+      "singerOrBand": "Logic"
+    },
+    {
+      "id": "8225c31f",
+      "name": "Black",
+      "genre": "Rock",
+      "singerOrBand": "Pearl Jam"
+    },
+    {
+      "id": "a5657412",
+      "name": "Given to Fly",
+      "genre": "Rock",
+      "singerOrBand": "Pearl Jam"
+    },
+    {
+      "id": "2329fef7",
+      "name": "Better Man",
+      "genre": "Rock",
+      "singerOrBand": "Pearl Jam"
+    },
+    {
+      "id": "8e9738b0",
+      "name": "Fortress",
+      "genre": "Rock",
+      "singerOrBand": "Queens of the Stone Age"
+    },
+    {
+      "id": "8ea0b66d",
+      "name": "No One Knows",
+      "genre": "Rock",
+      "singerOrBand": "Queens of the Stone Age"
+    },
+    {
+      "id": "8d028992",
+      "name": "I Appear Missing",
+      "genre": "Rock",
+      "singerOrBand": "Queens of the Stone Age"
+    },
+    {
+      "id": "613f6102",
+      "name": "Alkaline",
+      "genre": "Metal",
+      "singerOrBand": "Sleep Token"
+    },
+    {
+      "id": "765550c9",
+      "name": "Chokehold",
+      "genre": "Metal",
+      "singerOrBand": "Sleep Token"
+    },
+    {
+      "id": "49fa0e05",
+      "name": "The Summoning",
+      "genre": "Metal",
+      "singerOrBand": "Sleep Token"
+    },
+    {
+      "id": "dc772edb",
+      "name": "Disasterpiece",
+      "genre": "Metal",
+      "singerOrBand": "Slipknot"
+    },
+    {
+      "id": "ee7510a7",
+      "name": "Vermilion, Pt. 2",
+      "genre": "Metal",
+      "singerOrBand": "Slipknot"
+    },
+    {
+      "id": "0f652d03",
+      "name": "Sulfur",
+      "genre": "Metal",
+      "singerOrBand": "Slipknot"
+    },
+    {
+      "id": "d1b784a8",
+      "name": "Sign Of The Times",
+      "genre": "Rock",
+      "singerOrBand": "Three Days Grace"
+    },
+    {
+      "id": "ec839df9",
+      "name": "Painkiller",
+      "genre": "Rock",
+      "singerOrBand": "Three Days Grace"
+    },
+    {
+      "id": "9d36f689",
+      "name": "90210",
+      "genre": "Rap",
+      "singerOrBand": "Travis Scott"
+    },
+    {
+      "id": "32fd",
+      "name": "Teste Musica",
+      "genre": "Funk",
+      "singerOrBand": "Hawaianos"
     }
   ]
 }

@@ -23,6 +23,38 @@ const theme = createTheme({
         container: rootElement,
       },
     },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          // Standard
+          "& .MuiInput-root": {
+            color: "#FFF",
+            "&:before": {
+              borderColor: "#494E55",
+              borderWidth: "2px",
+            },
+            "&:after": {
+              borderColor: "#c3c7cc",
+              borderWidth: "3px",
+            },
+            ":hover:not(.Mui-focused)": {
+              "&:before": {
+                borderColor: "#737b86",
+                borderWidth: "2px",
+              },
+            },
+          },
+          // Label
+          "& .MuiInputLabel-standard": {
+            color: "#FFF",
+            "&.Mui-focused": {
+              color: "#FFF",
+              fontWeight: "bold",
+            },
+          },
+        },
+      },
+    },
     MuiTextField: {
       styleOverrides: {
         root: {

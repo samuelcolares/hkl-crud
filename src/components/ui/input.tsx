@@ -7,7 +7,17 @@ import {
 import TextField from "@mui/material/TextField";
 import { maskCPF, maskPhoneNumber } from "@/src/utils";
 import { z } from "zod";
-import { peopleSchema } from "@/src/features/people/schemas";
+import { personSchema } from "@/src/features/people/schemas";
+import {
+  Box,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+} from "@mui/material";
+import { songSchema } from "@/src/features/songs/schemas";
+import OutlinedInput from "@mui/material/OutlinedInput";
 
 type FormInputProps = {
   name: string;
@@ -51,6 +61,85 @@ export const Input = ({
   );
 };
 
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
+
+type SelectInputs<T extends FieldValues> = FormInputProps & {
+  setValue: UseFormSetValue<T>;
+  genreArray: string[];
+};
+
+export const SelectGenreInput: React.FC<
+  SelectInputs<z.infer<typeof songSchema>>
+> = ({
+  control,
+  name,
+  setValue,
+  label,
+  disabled = false,
+  size = "small",
+  variant = "standard",
+  genreArray,
+}) => {
+  const handleChange = (e: SelectChangeEvent) => {
+    const value = e.target.value as string;
+    return setValue("genre", value);
+  };
+  return (
+    <Controller
+      name={name}
+      control={control}
+      render={({
+        field: { onChange, value },
+        fieldState: { error },
+        formState,
+      }) => (
+        <Box sx={{ minWidth: 120 }}>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label" className="text-white as">
+              {label}
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={value}
+              label={label}
+              size={size}
+              variant={"outlined"}
+              disabled={disabled}
+              onChange={handleChange}
+              className="text-white p-2 rounded-md border-white"
+              MenuProps={MenuProps}
+              sx={{
+                maxHeight: 200,
+                overflow: `auto`,
+                "& .css-1xomo8h-MuiPaper-root-MuiPopover-paper-MuiMenu-paper":{
+                  background: "#000"
+                }
+              }}
+              // input={<OutlinedInput />}
+            >
+              {genreArray.map((item) => (
+                <MenuItem key={item} value={item}>
+                  {item}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Box>
+      )}
+    />
+  );
+};
+
 type MaskInputs<T extends FieldValues> = FormInputProps & {
   setValue: UseFormSetValue<T>;
   inputVariant: "cpf" | "phoneNumber";
@@ -65,7 +154,7 @@ export const MaskInput = ({
   size = "small",
   inputVariant,
   setValue,
-}: MaskInputs<z.infer<typeof peopleSchema>>) => {
+}: MaskInputs<z.infer<typeof personSchema>>) => {
   const handleMaskCPF = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -117,7 +206,7 @@ export const MaskPhoneNumberInput = ({
   disabled = false,
   size = "small",
   setValue,
-}: MaskInputs<z.infer<typeof peopleSchema>>) => {
+}: MaskInputs<z.infer<typeof personSchema>>) => {
   return (
     <Controller
       name={name}

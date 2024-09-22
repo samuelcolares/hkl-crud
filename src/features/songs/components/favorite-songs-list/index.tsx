@@ -2,9 +2,6 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-
-import Avatar from "@mui/material/Avatar";
 import { useStore } from "@/src/Providers/store-provider";
 import FavoriteIconButton from "@/src/components/favorite";
 import { ListSubheader, Typography } from "@mui/material";
@@ -12,17 +9,17 @@ import { useLocation, useRouter } from "@tanstack/react-router";
 import { cn } from "@/src/utils";
 import RemoveAllFavorites from "@/src/components/favorite/remove-all";
 
-export default function FavoritePeopleList({
+export default function FavoriteSongsList({
   variant,
 }: {
   variant: "md" | "lg";
 }) {
-  const { favoritePeople } = useStore();
+  const { favoriteSongs } = useStore();
   const router = useRouter();
 
   const routerTo = () => {
     router.navigate({
-      to: "/pessoas",
+      to: "/musicas",
     });
   };
   const { pathname } = useLocation();
@@ -42,48 +39,46 @@ export default function FavoritePeopleList({
       subheader={
         <ListSubheader className="bg-primary text-white font-bold flex items-center justify-between p-4">
           <Typography>
-            Pessoas Favoritas{" "}
-            {favoritePeople.length > 0 && `(${favoritePeople.length})`}
+            Músicas Favoritas{" "}
+            {favoriteSongs.length > 0 && `(${favoriteSongs.length})`}
           </Typography>
-          <RemoveAllFavorites type="people" />
+          <RemoveAllFavorites type="songs" />
         </ListSubheader>
       }
     >
-      {favoritePeople.map((person) => {
+      {favoriteSongs.map((song) => {
         return (
           <ListItem
-            key={person.id}
-            secondaryAction={<FavoriteIconButton type="person" item={person} />}
+            key={song.id}
+            secondaryAction={<FavoriteIconButton type="songs" item={song} />}
             className="py-1 gap-4 hover:bg-black/30"
           >
             {/* <ListItemButton>
               </ListItemButton> */}
-            <ListItemAvatar>
-              <Avatar
-                alt={person.name + person.id}
-                src={person.avatarUrl}
-                className={cn("w-20 h-20", variant === "md" && "w-12 h-12")}
-              />
-            </ListItemAvatar>
             <ListItemText
-              id={person.id}
+              id={song.id}
               sx={{
                 "& .MuiTypography-root": {
                   fontSize: variant === "md" ? "1rem" : "1.5rem",
+                  color: "white",
                 },
+                "& .MuiListItemText-secondary":{
+                  fontSize: variant === "md" ? ".7rem" : "1rem",
+                }
               }}
-              primary={person.name}
+              primary={song.name}
+              secondary={song.singerOrBand}
               className="text-white"
             />
           </ListItem>
         );
       })}
 
-      {favoritePeople.length === 0 && (
+      {favoriteSongs.length === 0 && (
         <>
           <ListItem className="py-1">
             <ListItemText
-              primary={"Nenhuma pessoa foi favoritada 😥"}
+              primary={"Nenhuma música foi favoritada 😭"}
               className="text-white text-center"
             />
           </ListItem>
@@ -91,12 +86,12 @@ export default function FavoritePeopleList({
             <ListItemButton
               className={cn(
                 "bg-primary hover:bg-primary/85 rounded-md",
-                pathname === "/pessoas" && "hidden"
+                pathname === "/musicas" && "hidden"
               )}
               onClick={routerTo}
             >
               <ListItemText
-                primary={"Favorite alguém"}
+                primary={"Favorite uma música"}
                 className="text-white text-center"
               />
             </ListItemButton>

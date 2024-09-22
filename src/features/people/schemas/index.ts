@@ -2,7 +2,7 @@ import { validCPF, validPhoneNumber } from "@/src/utils";
 import systemMessages from "@/src/utils/constants";
 import { z } from "zod";
 
-export const peopleSchema = z.object({
+export const personSchema = z.object({
   name: z
     .string({ required_error: systemMessages.required.name })
     .min(4, { message: systemMessages.minCharacteres.name }),

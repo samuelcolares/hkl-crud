@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Container } from "@mui/material";
+import { Container, Stack } from "@mui/material";
 import PeopleDataGrid from "../features/people/components/people-data-table";
-import PeopleDialog from "../features/people/components/people-form";
+import PersonDialog from "../features/people/components/person-form";
 import FavoritePeopleList from "../features/people/components/favorite-people-list";
+import FavoriteSongsList from "../features/songs/components/favorite-songs-list";
 export const Route = createFileRoute("/")({
   component: HomeComponent,
 });
@@ -10,7 +11,10 @@ export const Route = createFileRoute("/")({
 function HomeComponent() {
   return (
     <Container maxWidth={"lg"} className="space-y-2 mt-12">
-      <FavoritePeopleList variant="lg" />
+      <Stack direction={"row"} spacing={4}>
+        <FavoritePeopleList variant="lg" />
+        <FavoriteSongsList variant="lg" />
+      </Stack>
     </Container>
   );
 }

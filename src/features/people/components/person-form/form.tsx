@@ -18,12 +18,12 @@ import AvatarsDialog from "./avatar-dialog";
 
 // Types & Schemas
 import { Person } from "../../types";
-import { peopleSchema } from "../../schemas";
+import { personSchema } from "../../schemas";
 import { verifyCPF } from "../../services/verify-cpf";
 import { verifyPhone } from "../../services/verify-phone";
 import { verifyEmail } from "../../services/verify-email";
 
-const emptyValues: z.infer<typeof peopleSchema> = {
+const emptyValues: z.infer<typeof personSchema> = {
   cpf: "",
   email: "",
   name: "",
@@ -31,14 +31,14 @@ const emptyValues: z.infer<typeof peopleSchema> = {
   avatarUrl: "",
 };
 
-const PeopleForm = ({ defaultValues }: { defaultValues?: Person }) => {
+const PersonForm = ({ defaultValues }: { defaultValues?: Person }) => {
   const { avatars, status } = useAvatars();
   const { addPerson, editPerson } = usePeople();
   const { loading, startLoading, stopLoading } = useLoading();
   const { handleSubmit, control, setValue } = useForm<
-    z.infer<typeof peopleSchema>
+    z.infer<typeof personSchema>
   >({
-    resolver: zodResolver(peopleSchema),
+    resolver: zodResolver(personSchema),
     defaultValues: defaultValues
       ? {
           name: defaultValues.name,
@@ -57,7 +57,7 @@ const PeopleForm = ({ defaultValues }: { defaultValues?: Person }) => {
   const buttonLabel = defaultValues ? "Editar" : "Adicionar";
   const Icon = defaultValues ? <EditIcon /> : <AddIcon />;
 
-  const onSubmit = async (values: z.infer<typeof peopleSchema>) => {
+  const onSubmit = async (values: z.infer<typeof personSchema>) => {
     try {
       startLoading();
 
@@ -135,4 +135,4 @@ const PeopleForm = ({ defaultValues }: { defaultValues?: Person }) => {
   );
 };
 
-export default PeopleForm;
+export default PersonForm;

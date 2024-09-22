@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { peopleSchema } from "../schemas";
+import { personSchema } from "../schemas";
 import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
 import { Person } from "../types";
@@ -9,7 +9,7 @@ import { verifyPhone } from "./verify-phone";
 import { verifyEmail } from "./verify-email";
 
 export const addPersonToDatabase = async (
-  person: z.infer<typeof peopleSchema>
+  person: z.infer<typeof personSchema>
 ) => {
   try {
     const withDelay = async () => {

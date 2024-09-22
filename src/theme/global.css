@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 *::-webkit-scrollbar {
-  background: #494E55;
+  background: #494e55;
   width: 0.5em;
 }
 
@@ -16,5 +16,27 @@
 *::-webkit-scrollbar-thumb:hover {
   border-radius: 0.8rem;
   background-color: rgba(255, 255, 255, 0.8);
+}
 
+.css-12vk2zo-MuiInputBase-root-MuiInput-root-MuiSelect-root::before {
+  border-bottom-color: white !important;
+}
+
+.css-mvc5h5-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-color: #494e55 !important;
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border-color: #494e55;
+}
+
+.css-1xomo8h-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+  background-color: #2e2e2e;
+  color: white;
+}
+
+.css-1vupn69-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-color: #494e55;
 }

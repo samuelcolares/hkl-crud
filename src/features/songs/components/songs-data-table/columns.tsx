@@ -1,31 +1,26 @@
 import { GridColDef } from "@mui/x-data-grid";
-import { Person } from "../../types";
+import { Song } from "../../types";
 import { Avatar, Stack } from "@mui/material";
-import PersonDialog from "../person-form";
+// import PersonDialog from "../people-form";
+// import DeletePersonDialog from "../delete-person-dialog";
+
 import FavoriteIconButton from "@/src/components/favorite";
 import { DeleteDialog } from "@/src/components/delete-dialog";
+import SongDialog from "../song-form";
 
-export const columns: GridColDef<Person>[] = [
+export const columns: GridColDef<Song>[] = [
   {
     field: "",
     headerName: "",
     width: 80,
     editable: false,
     renderCell: (params) => (
-      <FavoriteIconButton type="person" item={params.row} />
+      <FavoriteIconButton type="songs" item={params.row} />
     ),
     filterable: false,
     sortable: false,
     hideable: false,
     disableColumnMenu: true,
-  },
-  {
-    field: "avatarUrl",
-    headerName: "Avatar",
-    width: 150,
-    editable: false,
-    renderCell: (params) => <Avatar alt="Avatar" src={params.value} />,
-    filterable: false,
   },
   {
     field: "name",
@@ -35,26 +30,20 @@ export const columns: GridColDef<Person>[] = [
     filterable: false,
   },
   {
-    field: "cpf",
-    headerName: "CPF",
+    field: "genre",
+    headerName: "Gênero",
     editable: false,
     flex: 1,
     filterable: false,
   },
   {
-    field: "phone",
-    headerName: "Telefone",
+    field: "singerOrBand",
+    headerName: "Cantor(a)/Banda",
     flex: 1,
     editable: false,
     filterable: false,
   },
-  {
-    field: "email",
-    headerName: "E-mail",
-    flex: 1,
-    editable: false,
-    filterable: false,
-  },
+
   {
     field: "id",
     headerName: "Ações",
@@ -63,8 +52,8 @@ export const columns: GridColDef<Person>[] = [
     filterable: false,
     renderCell: (params) => (
       <Stack direction={"row"}>
-        <PersonDialog variant="edit" defaultValues={params.row} />
-        <DeleteDialog type="people" id={params.value} />
+        <SongDialog variant="edit" defaultValues={params.row} />
+        <DeleteDialog type="songs" id={params.value} />
       </Stack>
     ),
   },
