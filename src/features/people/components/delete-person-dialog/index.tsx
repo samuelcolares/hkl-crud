@@ -22,6 +22,10 @@ export default function DeletePersonDialog({ personId }: { personId: string }) {
   };
 
   const handleClose = async () => {
+    setOpen(false);
+  };
+
+  const deleteAndClose = async () => {
     try {
       startLoading();
       await deletePerson(personId);
@@ -77,12 +81,12 @@ export default function DeletePersonDialog({ personId }: { personId: string }) {
             onClick={handleClose}
             variant="outlined"
             disabled={loading}
-            className="disabled:opacity-70 disabled:bg-white/10 text-primary"
+            className="disabled:opacity-70 disabled:bg-white/10 disabled:text-primary"
           >
             Cancelar
           </Button>
           <Button
-            onClick={handleClose}
+            onClick={deleteAndClose}
             disabled={loading}
             color="error"
             variant="outlined"
