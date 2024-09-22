@@ -81,5 +81,146 @@
       "url": "/src/public/avatars/avatar-20.webp"
     }
   ],
-  "people": []
+  "people": [
+    {
+      "id": 1,
+      "name": "Angela Jackson",
+      "email": "angela.jackson@example.com",
+      "phone": "(14) 98033-8466",
+      "avatarUrl": "/src/public/avatars/avatar-1.webp"
+    },
+    {
+      "id": 2,
+      "name": "Jessica Parker",
+      "email": "jessica.parker@example.com",
+      "phone": "(25) 95442-2979",
+      "avatarUrl": "/src/public/avatars/avatar-2.webp"
+    },
+    {
+      "id": 3,
+      "name": "Gabriela Miller",
+      "email": "gabriela.miller@example.com",
+      "phone": "(65) 91857-3775",
+      "avatarUrl": "/src/public/avatars/avatar-3.webp"
+    },
+    {
+      "id": 4,
+      "name": "Craig Jacobs",
+      "email": "craig.jacobs@example.com",
+      "phone": "(42) 93662-8695",
+      "avatarUrl": "/src/public/avatars/avatar-4.webp"
+    },
+    {
+      "id": 5,
+      "name": "Calvin Woods",
+      "email": "calvin.woods@example.com",
+      "phone": "(52) 99071-5281",
+      "avatarUrl": "/src/public/avatars/avatar-5.webp"
+    },
+    {
+      "id": 6,
+      "name": "Richard Kelley",
+      "email": "richard.kelley@example.com",
+      "phone": "(56) 92948-7151",
+      "avatarUrl": "/src/public/avatars/avatar-6.webp"
+    },
+    {
+      "id": 7,
+      "name": "Diane Thomas",
+      "email": "diane.thomas@example.com",
+      "phone": "(17) 99321-1700",
+      "avatarUrl": "/src/public/avatars/avatar-7.webp"
+    },
+    {
+      "id": 8,
+      "name": "Elizabeth Bush",
+      "email": "elizabeth.bush@example.com",
+      "phone": "(38) 96543-4003",
+      "avatarUrl": "/src/public/avatars/avatar-8.webp"
+    },
+    {
+      "id": 9,
+      "name": "Laurie Baker",
+      "email": "laurie.baker@example.com",
+      "phone": "(18) 92134-1142",
+      "avatarUrl": "/src/public/avatars/avatar-9.webp"
+    },
+    {
+      "id": 10,
+      "name": "Timothy Townsend",
+      "email": "timothy.townsend@example.com",
+      "phone": "(87) 93872-5578",
+      "avatarUrl": "/src/public/avatars/avatar-10.webp"
+    },
+    {
+      "id": 11,
+      "name": "Destiny Murray",
+      "email": "destiny.murray@example.com",
+      "phone": "(56) 97019-8052",
+      "avatarUrl": "/src/public/avatars/avatar-11.webp"
+    },
+    {
+      "id": 12,
+      "name": "Lydia Lopez",
+      "email": "lydia.lopez@example.com",
+      "phone": "(66) 94807-4748",
+      "avatarUrl": "/src/public/avatars/avatar-12.webp"
+    },
+    {
+      "id": 13,
+      "name": "Bradley Carpenter",
+      "email": "bradley.carpenter@example.com",
+      "phone": "(15) 91528-4468",
+      "avatarUrl": "/src/public/avatars/avatar-13.webp"
+    },
+    {
+      "id": 14,
+      "name": "Nicholas Nguyen",
+      "email": "nicholas.nguyen@example.com",
+      "phone": "(71) 98880-9903",
+      "avatarUrl": "/src/public/avatars/avatar-14.webp"
+    },
+    {
+      "id": 15,
+      "name": "Mrs. Amanda Ibarra",
+      "email": "mrs..amanda@example.com",
+      "phone": "(40) 97227-3481",
+      "avatarUrl": "/src/public/avatars/avatar-15.webp"
+    },
+    {
+      "id": 16,
+      "name": "Pamela Bailey",
+      "email": "pamela.bailey@example.com",
+      "phone": "(70) 92563-2843",
+      "avatarUrl": "/src/public/avatars/avatar-16.webp"
+    },
+    {
+      "id": 17,
+      "name": "Cindy Martinez",
+      "email": "cindy.martinez@example.com",
+      "phone": "(59) 95385-6573",
+      "avatarUrl": "/src/public/avatars/avatar-17.webp"
+    },
+    {
+      "id": 18,
+      "name": "Erica Simpson",
+      "email": "erica.simpson@example.com",
+      "phone": "(25) 92319-8109",
+      "avatarUrl": "/src/public/avatars/avatar-18.webp"
+    },
+    {
+      "id": 19,
+      "name": "Joy Jackson",
+      "email": "joy.jackson@example.com",
+      "phone": "(26) 93293-9248",
+      "avatarUrl": "/src/public/avatars/avatar-19.webp"
+    },
+    {
+      "id": 20,
+      "name": "Michelle Miller",
+      "email": "michelle.miller@example.com",
+      "phone": "(71) 97956-4757",
+      "avatarUrl": "/src/public/avatars/avatar-20.webp"
+    }
+  ]
 }

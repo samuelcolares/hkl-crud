@@ -31,7 +31,7 @@ export default function FavoritePeopleList({
       sx={{
         width: "100%",
         maxWidth: variant === "md" ? 300 : 450,
-        maxHeight: 350,
+        maxHeight: variant === "md" ? 300 : 550,
         overflow: "auto",
         bgcolor: "rgba(0,0,0,0.1)",
         border: 1,
@@ -39,7 +39,7 @@ export default function FavoritePeopleList({
       }}
       className="border-white rounded-md"
       subheader={
-        <ListSubheader className="bg-primary text-white font-bold">
+        <ListSubheader className="bg-primary text-white font-bold ">
           Pessoas Favoritas
         </ListSubheader>
       }

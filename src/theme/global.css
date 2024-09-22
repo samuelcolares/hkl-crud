@@ -2,7 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-.css-buhf99-MuiDataGrid-root,
-.MuiDataGrid-container--top [role="row"] {
-  background: transparent !important;
+*::-webkit-scrollbar {
+  background: #494E55;
+  width: 0.5em;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 0.8rem;
+  background: rgba(255, 255, 255, 0.3);
+  transition: background 0.4s;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  border-radius: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.8);
+
 }
