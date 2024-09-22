@@ -85,9 +85,9 @@ export default function SearchAppBar() {
             }}
           >
             <NavbarLink Icon={HomeIcon} label="Início" to="/" />
-            <NavbarLink Icon={PeopleIcon} label="Pessoas" to="/people" />
-            <NavbarLink Icon={MovieIcon} label="Filmes" to="/movies" />
-            <NavbarLink Icon={MusicNoteIcon} label="Músicas" to="/songs" />
+            <NavbarLink Icon={PeopleIcon} label="Pessoas" to="/pessoas" />
+            <NavbarLink Icon={MovieIcon} label="Filmes" to="/filmes" />
+            <NavbarLink Icon={MusicNoteIcon} label="Músicas" to="/musicas" />
           </Stack>
           <Search>
             <SearchIconWrapper>

@@ -6,9 +6,15 @@ import { z } from "zod";
 import { addPersonToDatabase } from "../services/add-person-to-database";
 import { editPersonOnDatabase } from "../services/edit-person-on-database";
 import { deletePersonOnDatabase } from "../services/delete-person-on-database";
+import { useStore } from "@/src/Providers/store-provider";
 
 const usePeople = () => {
   const queryClient = useQueryClient();
+  const {
+    isPersonFavorited,
+    updatePersonOnLocalStorage,
+    removePersonOnLocalStorage,
+  } = useStore();
   const { data: people = [], status } = useQuery<Person[], Error>({
     queryKey: ["people"],
     queryFn: getPeople,
@@ -29,6 +35,7 @@ const usePeople = () => {
   const editPerson = async (person: Person) => {
     const editedPerson = await editPersonOnDatabase(person);
     editPersonLocal(editedPerson);
+    updatePersonOnLocalStorage(editedPerson);
   };
 
   const editPersonLocal = (person: Person | undefined) => {
@@ -57,7 +64,7 @@ const usePeople = () => {
       const index = updatedPeople.findIndex(
         (oldPerson) => oldPerson.id === personId
       );
-
+      removePersonOnLocalStorage(updatedPeople[index]);
       updatedPeople.splice(index, 1);
 
       return updatedPeople;

@@ -2,6 +2,7 @@ import React from "react";
 import theme from "../theme/mui-theme-for-tailwind";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { StyledEngineProvider, ThemeProvider } from "@mui/material";
+import { StoreProvider } from "./store-provider";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -11,7 +12,7 @@ const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <QueryClientProvider client={queryClient}>
-          {children}
+          <StoreProvider>{children}</StoreProvider>
         </QueryClientProvider>
       </ThemeProvider>
     </StyledEngineProvider>

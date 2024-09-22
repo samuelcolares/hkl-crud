@@ -12,9 +12,9 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
-import { Route as SongsIndexImport } from './routes/songs/index'
-import { Route as PeopleIndexImport } from './routes/people/index'
-import { Route as MoviesIndexImport } from './routes/movies/index'
+import { Route as PessoasIndexImport } from './routes/pessoas/index'
+import { Route as MusicasIndexImport } from './routes/musicas/index'
+import { Route as FilmesIndexImport } from './routes/filmes/index'
 
 // Create/Update Routes
 
@@ -23,18 +23,18 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const SongsIndexRoute = SongsIndexImport.update({
-  path: '/songs/',
+const PessoasIndexRoute = PessoasIndexImport.update({
+  path: '/pessoas/',
   getParentRoute: () => rootRoute,
 } as any)
 
-const PeopleIndexRoute = PeopleIndexImport.update({
-  path: '/people/',
+const MusicasIndexRoute = MusicasIndexImport.update({
+  path: '/musicas/',
   getParentRoute: () => rootRoute,
 } as any)
 
-const MoviesIndexRoute = MoviesIndexImport.update({
-  path: '/movies/',
+const FilmesIndexRoute = FilmesIndexImport.update({
+  path: '/filmes/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -49,25 +49,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/movies/': {
-      id: '/movies/'
-      path: '/movies'
-      fullPath: '/movies'
-      preLoaderRoute: typeof MoviesIndexImport
+    '/filmes/': {
+      id: '/filmes/'
+      path: '/filmes'
+      fullPath: '/filmes'
+      preLoaderRoute: typeof FilmesIndexImport
       parentRoute: typeof rootRoute
     }
-    '/people/': {
-      id: '/people/'
-      path: '/people'
-      fullPath: '/people'
-      preLoaderRoute: typeof PeopleIndexImport
+    '/musicas/': {
+      id: '/musicas/'
+      path: '/musicas'
+      fullPath: '/musicas'
+      preLoaderRoute: typeof MusicasIndexImport
       parentRoute: typeof rootRoute
     }
-    '/songs/': {
-      id: '/songs/'
-      path: '/songs'
-      fullPath: '/songs'
-      preLoaderRoute: typeof SongsIndexImport
+    '/pessoas/': {
+      id: '/pessoas/'
+      path: '/pessoas'
+      fullPath: '/pessoas'
+      preLoaderRoute: typeof PessoasIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -77,47 +77,47 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/movies': typeof MoviesIndexRoute
-  '/people': typeof PeopleIndexRoute
-  '/songs': typeof SongsIndexRoute
+  '/filmes': typeof FilmesIndexRoute
+  '/musicas': typeof MusicasIndexRoute
+  '/pessoas': typeof PessoasIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/movies': typeof MoviesIndexRoute
-  '/people': typeof PeopleIndexRoute
-  '/songs': typeof SongsIndexRoute
+  '/filmes': typeof FilmesIndexRoute
+  '/musicas': typeof MusicasIndexRoute
+  '/pessoas': typeof PessoasIndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/movies/': typeof MoviesIndexRoute
-  '/people/': typeof PeopleIndexRoute
-  '/songs/': typeof SongsIndexRoute
+  '/filmes/': typeof FilmesIndexRoute
+  '/musicas/': typeof MusicasIndexRoute
+  '/pessoas/': typeof PessoasIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/movies' | '/people' | '/songs'
+  fullPaths: '/' | '/filmes' | '/musicas' | '/pessoas'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/movies' | '/people' | '/songs'
-  id: '__root__' | '/' | '/movies/' | '/people/' | '/songs/'
+  to: '/' | '/filmes' | '/musicas' | '/pessoas'
+  id: '__root__' | '/' | '/filmes/' | '/musicas/' | '/pessoas/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  MoviesIndexRoute: typeof MoviesIndexRoute
-  PeopleIndexRoute: typeof PeopleIndexRoute
-  SongsIndexRoute: typeof SongsIndexRoute
+  FilmesIndexRoute: typeof FilmesIndexRoute
+  MusicasIndexRoute: typeof MusicasIndexRoute
+  PessoasIndexRoute: typeof PessoasIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  MoviesIndexRoute: MoviesIndexRoute,
-  PeopleIndexRoute: PeopleIndexRoute,
-  SongsIndexRoute: SongsIndexRoute,
+  FilmesIndexRoute: FilmesIndexRoute,
+  MusicasIndexRoute: MusicasIndexRoute,
+  PessoasIndexRoute: PessoasIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -133,22 +133,22 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/movies/",
-        "/people/",
-        "/songs/"
+        "/filmes/",
+        "/musicas/",
+        "/pessoas/"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/movies/": {
-      "filePath": "movies/index.tsx"
+    "/filmes/": {
+      "filePath": "filmes/index.tsx"
     },
-    "/people/": {
-      "filePath": "people/index.tsx"
+    "/musicas/": {
+      "filePath": "musicas/index.tsx"
     },
-    "/songs/": {
-      "filePath": "songs/index.tsx"
+    "/pessoas/": {
+      "filePath": "pessoas/index.tsx"
     }
   }
 }

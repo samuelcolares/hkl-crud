@@ -1,84 +1,12 @@
-import * as React from "react";
 import Box from "@mui/material/Box";
-import { DataGrid, GridColDef, GridLocaleText } from "@mui/x-data-grid";
-import { Avatar, IconButton, Stack, SxProps, Theme } from "@mui/material";
-import { Person } from "@/src/features/people/types";
+import { DataGrid } from "@mui/x-data-grid";
+import { SxProps, Theme } from "@mui/material";
 import usePeople from "../../hooks/use-people.hook";
-import DeleteIcon from "@mui/icons-material/Delete";
-import StarIcon from "@mui/icons-material/Grade";
-import PeopleDialog from "../people-form";
-import DeletePersonDialog from "../delete-person-dialog";
-
-const columns: GridColDef<Person>[] = [
-  {
-    field: "",
-    headerName: "",
-    width: 80,
-    editable: false,
-    renderCell: (params) => (
-      <IconButton aria-label="delete" color="primary">
-        <StarIcon className="text-white-600" />
-      </IconButton>
-    ),
-    filterable: false,
-    sortable: false,
-    hideable: false,
-    disableColumnMenu: true,
-  },
-  {
-    field: "avatarUrl",
-    headerName: "Avatar",
-    width: 150,
-    editable: false,
-    renderCell: (params) => <Avatar alt="Avatar" src={params.value} />,
-    filterable: false,
-  },
-  {
-    field: "name",
-    headerName: "Nome",
-    editable: false,
-    flex: 1,
-    filterable: false,
-  },
-  {
-    field: "cpf",
-    headerName: "CPF",
-    editable: false,
-    flex: 1,
-    filterable: false,
-  },
-  {
-    field: "phone",
-    headerName: "Telefone",
-    flex: 1,
-    editable: false,
-    filterable: false,
-  },
-  {
-    field: "email",
-    headerName: "E-mail",
-    flex: 1,
-    editable: false,
-    filterable: false,
-  },
-  {
-    field: "id",
-    headerName: "Ações",
-    flex: 1,
-    editable: false,
-    filterable: false,
-    renderCell: (params) => (
-      <Stack direction={"row"}>
-        <PeopleDialog variant="edit" defaultValues={params.row} />
-        <DeletePersonDialog personId={params.value} />
-      </Stack>
-    ),
-  },
-];
+import { columns } from "./columns";
+import { localizedTextsMap } from "@/src/utils/constants";
 
 export default function PeopleDataGrid() {
   const { people, status } = usePeople();
-  console.log(people, status);
   return (
     <Box>
       <DataGrid
@@ -97,6 +25,7 @@ export default function PeopleDataGrid() {
         className="w-full"
         // checkboxSelection
         rowSelection={false}
+        loading={status === "pending"}
       />
     </Box>
   );
@@ -159,22 +88,4 @@ const SX: SxProps<Theme> = {
   "& .MuiButtonBase-root": {
     color: "#FFF",
   },
-};
-
-const localizedTextsMap: Partial<GridLocaleText> = {
-  columnMenuUnsort: "Não classificado",
-  columnMenuSortAsc: "Classificar por ordem crescente",
-  columnMenuSortDesc: "Classificar por ordem decrescente",
-  columnMenuFilter: "Filtro",
-  columnMenuHideColumn: "Ocultar",
-  columnMenuShowColumns: "Mostrar colunas",
-  columnMenuManageColumns: "Gerenciar Colunas",
-  columnsManagementShowHideAllText: "Mostrar/Ocultar Tudo",
-  columnsManagementReset: "Resetar",
-  columnsManagementSearchTitle: "Pesquisar",
-  columnsManagementNoColumns: "Sem resultados",
-  filterPanelColumns: "Colunas",
-  filterPanelOperator: "Operador",
-  noRowsLabel: "Sem resultado.",
-  noResultsOverlayLabel: "Sem resultados.",
 };

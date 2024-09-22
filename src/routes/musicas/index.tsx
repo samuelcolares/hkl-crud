@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 
-export const Route = createFileRoute('/songs/')({
+export const Route = createFileRoute('/musicas/')({
   component: SongsComponent,
 })
 
