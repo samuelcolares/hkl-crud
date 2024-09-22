@@ -3,15 +3,6 @@ const rootElement = document.getElementById("root");
 
 const theme = createTheme({
   components: {
-    MuiGrid2: {
-      styleOverrides: {
-        root: {
-          ["--DataGrid-pinnedBackground"]: "#123456 !important",
-          ["--DataGrid-containerBackground"]: "#123456 !important",
-        },
-      },
-    },
-
     MuiPopover: {
       defaultProps: {
         container: rootElement,

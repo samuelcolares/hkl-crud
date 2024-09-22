@@ -1,31 +1,21 @@
-import * as React from 'react'
-import { createFileRoute } from '@tanstack/react-router'
-import useAvatars from '@/src/features/people/hooks/use-avatars.hook'
-import { Avatar } from '@mui/material'
+import * as React from "react";
+import { createFileRoute } from "@tanstack/react-router";
+import useAvatars from "@/src/features/people/hooks/use-avatars.hook";
+import { Avatar, Container } from "@mui/material";
+import FavoritePeopleList from "@/src/features/people/components/favorite-people-list";
+import PeopleDataGrid from "@/src/features/people/components/people-data-table";
+import PeopleDialog from "@/src/features/people/components/people-form";
 
-export const Route = createFileRoute('/pessoas/')({
+export const Route = createFileRoute("/pessoas/")({
   component: PeopleComponent,
-})
+});
 
 function PeopleComponent() {
-  const { avatars, status } = useAvatars()
-  if (status === 'success') {
-    return (
-      <div className="flex flex-wrap gap-2 items-center">
-        {avatars.map((avatar) => (
-          <Avatar
-            key={avatar.id}
-            alt={avatar.id.toString()}
-            src={avatar.url}
-            className="w-24 h-24"
-          />
-        ))}
-      </div>
-    )
-  }
   return (
-    <div className="p-2">
-      <h3>People</h3>
-    </div>
-  )
+    <Container maxWidth={"lg"} className="space-y-2 mt-12">
+      <PeopleDataGrid />
+      <PeopleDialog variant="add" />
+      <FavoritePeopleList variant="md"/>
+    </Container>
+  );
 }

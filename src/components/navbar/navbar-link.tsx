@@ -16,13 +16,7 @@ type NavbarLinkProps = {
 const NavbarLink: React.FC<NavbarLinkProps> = ({ label, to, Icon }) => {
   const { pathname } = useLocation();
   return (
-    <Link
-      to={to}
-      // className="border-b border-b-white text-white p-2 rounded-sm hover:bg-white/30 transition font-bold"
-      // activeProps={{
-      //   className: activeClassName,
-      // }}
-    >
+    <Link to={to}>
       <Button
         variant="text"
         startIcon={<Icon />}

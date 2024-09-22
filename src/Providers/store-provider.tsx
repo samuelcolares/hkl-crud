@@ -1,6 +1,7 @@
 import { createContext, useContext } from "react";
 import { StoreContext as StoreType } from "./store.type";
 import { useFavoritePeople } from "../features/people/hooks/use-favorite-people.hook";
+import usePeople from "../features/people/hooks/use-people.hook";
 
 const StoreContext = createContext<StoreType>({} as StoreType);
 
@@ -16,9 +17,13 @@ export const StoreProvider = ({ children }: { children: React.ReactNode }) => {
     removePersonOnLocalStorage,
   } = useFavoritePeople();
 
+  const { people, status: peopleStatus } = usePeople();
+
   return (
     <StoreContext.Provider
       value={{
+        people,
+        peopleStatus,
         favoritePeople,
         isPersonFavorited,
         favoritePerson,

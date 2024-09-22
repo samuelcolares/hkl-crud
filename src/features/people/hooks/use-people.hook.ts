@@ -11,13 +11,13 @@ import { useStore } from "@/src/Providers/store-provider";
 const usePeople = () => {
   const queryClient = useQueryClient();
   const {
-    isPersonFavorited,
     updatePersonOnLocalStorage,
     removePersonOnLocalStorage,
   } = useStore();
   const { data: people = [], status } = useQuery<Person[], Error>({
     queryKey: ["people"],
     queryFn: getPeople,
+    staleTime: Infinity,
   });
 
   const addPerson = async (person: z.infer<typeof peopleSchema>) => {
