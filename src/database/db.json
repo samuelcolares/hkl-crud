@@ -243,7 +243,158 @@
       "avatarUrl": "/src/public/avatars/avatar-20.webp"
     }
   ],
-  "movies": [],
+  "movies": [
+    {
+      "id": "f10f",
+      "title": "O Poderoso Chefão",
+      "genre": "Crime"
+    },
+    {
+      "id": "0203",
+      "title": "Star Wars: Episódio IV - Uma Nova Esperança",
+      "genre": "Ficção Científica"
+    },
+    {
+      "id": "c45f",
+      "title": "Jurassic Park: O Parque dos Dinossauros",
+      "genre": "Aventura"
+    },
+    {
+      "id": "ce7a",
+      "title": "O Cavaleiro das Trevas",
+      "genre": "Ação"
+    },
+    {
+      "id": "7510",
+      "title": "Titanic",
+      "genre": "Romance"
+    },
+    {
+      "id": "5477",
+      "title": "Pulp Fiction: Tempo de Violência",
+      "genre": "Crime"
+    },
+    {
+      "id": "07a2",
+      "title": "Forrest Gump: O Contador de Histórias",
+      "genre": "Drama"
+    },
+    {
+      "id": "1bd6",
+      "title": "Avatar",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "1e37",
+      "title": "Vingadores: Ultimato",
+      "genre": "Ação"
+    },
+    {
+      "id": "4dac",
+      "title": "O Rei Leão",
+      "genre": "Animação"
+    },
+    {
+      "id": "d329",
+      "title": "O Senhor dos Anéis: O Retorno do Rei",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "5e5b",
+      "title": "Piratas do Caribe",
+      "genre": "Aventura"
+    },
+    {
+      "id": "2f1a",
+      "title": "A Origem",
+      "genre": "Ficção Científica"
+    },
+    {
+      "id": "338b",
+      "title": "Harry Potter e a Pedra Filosofal",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "9e98",
+      "title": "De Volta para o Futuro",
+      "genre": "Ficção Científica"
+    },
+    {
+      "id": "f2d6",
+      "title": "Homem-Aranha: Sem Volta Para Casa",
+      "genre": "Ação"
+    },
+    {
+      "id": "51d1",
+      "title": "Frozen: Uma Aventura Congelante",
+      "genre": "Animação"
+    },
+    {
+      "id": "4360",
+      "title": "Toy Story",
+      "genre": "Animação"
+    },
+    {
+      "id": "5d19",
+      "title": "O Exterminador do Futuro",
+      "genre": "Ficção Científica"
+    },
+    {
+      "id": "57ea",
+      "title": "Duro de Matar",
+      "genre": "Ação"
+    },
+    {
+      "id": "7f07",
+      "title": "Pantera Negra",
+      "genre": "Ação"
+    },
+    {
+      "id": "35d3",
+      "title": "Clube da Luta",
+      "genre": "Drama"
+    },
+    {
+      "id": "cdca",
+      "title": "Interestelar",
+      "genre": "Ficção Científica"
+    },
+    {
+      "id": "e725",
+      "title": "Matrix",
+      "genre": "Ficção Científica"
+    },
+    {
+      "id": "7e1a",
+      "title": "Gladiador",
+      "genre": "Ação"
+    },
+    {
+      "id": "dc3f",
+      "title": "O Silêncio dos Inocentes",
+      "genre": "Suspense"
+    },
+    {
+      "id": "150b",
+      "title": "O Resgate do Soldado Ryan",
+      "genre": "Guerra"
+    },
+    {
+      "id": "2de5",
+      "title": "A Lista de Schindler",
+      "genre": "Biografia"
+    },
+    {
+      "id": "7027",
+      "title": "Coração Valente",
+      "genre": "Drama"
+    },
+    {
+      "id": "e4cc",
+      "title": "Um Sonho de Liberdade",
+      "genre": "Drama"
+    }
+  ],
   "songs": [
     {
       "id": "ac7fad56",
@@ -412,12 +563,6 @@
       "name": "90210",
       "genre": "Rap",
       "singerOrBand": "Travis Scott"
-    },
-    {
-      "id": "32fd",
-      "name": "Teste Musica",
-      "genre": "Funk",
-      "singerOrBand": "Hawaianos"
     }
   ]
 }

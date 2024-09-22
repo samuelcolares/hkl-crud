@@ -18,6 +18,7 @@ import {
 } from "@mui/material";
 import { songSchema } from "@/src/features/songs/schemas";
 import OutlinedInput from "@mui/material/OutlinedInput";
+import { movieSchema } from "@/src/features/movies/schemas";
 
 type FormInputProps = {
   name: string;
@@ -72,16 +73,21 @@ const MenuProps = {
   },
 };
 
-type SelectInputs<T extends FieldValues> = FormInputProps & {
-  setValue: UseFormSetValue<T>;
-  genreArray: string[];
-};
+type SongSchema = z.infer<typeof songSchema>;
+type MovieSchema = z.infer<typeof movieSchema>;
+type Action =
+  | { type: "movie"; setValue: UseFormSetValue<MovieSchema> }
+  | { type: "song"; setValue: UseFormSetValue<SongSchema> };
 
-export const SelectGenreInput: React.FC<
-  SelectInputs<z.infer<typeof songSchema>>
-> = ({
+type SelectInputs = FormInputProps &
+  Action & {
+    genreArray: string[];
+  };
+
+export const SelectGenreInput: React.FC<SelectInputs> = ({
   control,
   name,
+  type,
   setValue,
   label,
   disabled = false,
@@ -91,7 +97,8 @@ export const SelectGenreInput: React.FC<
 }) => {
   const handleChange = (e: SelectChangeEvent) => {
     const value = e.target.value as string;
-    return setValue("genre", value);
+    if (type === "movie") return setValue("genre", value);
+    if (type === "song") return setValue("genre", value);
   };
   return (
     <Controller
@@ -121,9 +128,9 @@ export const SelectGenreInput: React.FC<
               sx={{
                 maxHeight: 200,
                 overflow: `auto`,
-                "& .css-1xomo8h-MuiPaper-root-MuiPopover-paper-MuiMenu-paper":{
-                  background: "#000"
-                }
+                "& .css-1xomo8h-MuiPaper-root-MuiPopover-paper-MuiMenu-paper": {
+                  background: "#000",
+                },
               }}
               // input={<OutlinedInput />}
             >

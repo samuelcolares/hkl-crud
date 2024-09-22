@@ -1,8 +1,9 @@
+import { Movie } from "../features/movies/types";
 import { Person } from "../features/people/types";
 import { Song } from "../features/songs/types";
 import { Status } from "../types";
 
-type PersonContext = {
+type PeopleContext = {
   people: Person[];
   peopleStatus: Status;
   favoritePeople: Person[];
@@ -26,7 +27,15 @@ type SongsContext = {
   removeSongOnLocalStorage: (song: Song | undefined) => void;
 };
 
-export type StoreContext = PersonContext & SongsContext & {
-  // favoriteMusic
-  // favoriteMovies
+type MoviesContext = {
+  movies: Movie[];
+  moviesStatus: Status;
+  favoriteMovies: Movie[];
+  isMovieFavorited: (movie: Movie) => boolean;
+  favoriteMovie: (movie: Movie) => void;
+  resetFavoriteMovies: () => void;
+  updateMovieOnLocalStorage: (movie: Movie | undefined) => void;
+  removeMovieOnLocalStorage: (movie: Movie | undefined) => void;
 };
+
+export type StoreContext = PeopleContext & SongsContext & MoviesContext;

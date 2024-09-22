@@ -10,33 +10,31 @@ import { useLoading } from "@/src/hooks/convinient-states.hooks";
 import { Input, MaskInput, SelectGenreInput } from "@/src/components/ui/input";
 import { Box, Button, Stack } from "@mui/material";
 import LoaderCircle from "@/src/components/ui/icons/loader-circle";
-import AddIcon from "@mui/icons-material/MusicNote";
+import AddIcon from "@mui/icons-material/Movie";
 import EditIcon from "@mui/icons-material/Edit";
 
 // Types & Schemas
-import { Song } from "../../types";
-import { songSchema } from "../../schemas";
-import useSongs from "../../hooks/use-songs.hook";
-import { musicGenres } from "@/src/utils/constants";
+import { Movie } from "../../types";
+import { movieSchema } from "../../schemas";
+import useMovies from "../../hooks/use-movies.hook";
+import { movieGenres } from "@/src/utils/constants";
 
-const emptyValues: z.infer<typeof songSchema> = {
-  name: "",
+const emptyValues: z.infer<typeof movieSchema> = {
+  title: "",
   genre: "",
-  singerOrBand: "",
 };
 
-const SongForm = ({ defaultValues }: { defaultValues?: Song }) => {
-  const { addSong, editSong } = useSongs();
+const MovieForm = ({ defaultValues }: { defaultValues?: Movie }) => {
+  const { addMovie, editMovie } = useMovies();
   const { loading, startLoading, stopLoading } = useLoading();
   const { handleSubmit, control, setValue } = useForm<
-    z.infer<typeof songSchema>
+    z.infer<typeof movieSchema>
   >({
-    resolver: zodResolver(songSchema),
+    resolver: zodResolver(movieSchema),
     defaultValues: defaultValues
       ? {
-          name: defaultValues.name,
+          title: defaultValues.title,
           genre: defaultValues.genre,
-          singerOrBand: defaultValues.singerOrBand,
         }
       : emptyValues,
   });
@@ -44,15 +42,15 @@ const SongForm = ({ defaultValues }: { defaultValues?: Song }) => {
   const buttonLabel = defaultValues ? "Editar" : "Adicionar";
   const Icon = defaultValues ? <EditIcon /> : <AddIcon />;
 
-  const onSubmit = async (values: z.infer<typeof songSchema>) => {
+  const onSubmit = async (values: z.infer<typeof movieSchema>) => {
     try {
       startLoading();
 
       if (!defaultValues) {
-        return await addSong(values);
+        return await addMovie(values);
       }
 
-      return await editSong({
+      return await editMovie({
         id: defaultValues.id,
         ...values,
       });
@@ -73,14 +71,12 @@ const SongForm = ({ defaultValues }: { defaultValues?: Song }) => {
           control={control}
           name="genre"
           label="Gênero"
-          genreArray={musicGenres}
+          genreArray={movieGenres}
           setValue={setValue}
-          type="song"
+          type="movie"
         />
-        <Input control={control} name="name" label="Nome" />
+        <Input control={control} name="title" label="Título" />
       </Stack>
-
-      <Input control={control} name="singerOrBand" label="Cantor(a)/Banda" />
 
       <Button
         type="submit"
@@ -96,4 +92,4 @@ const SongForm = ({ defaultValues }: { defaultValues?: Song }) => {
   );
 };
 
-export default SongForm;
+export default MovieForm;

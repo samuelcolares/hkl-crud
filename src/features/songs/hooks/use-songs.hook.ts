@@ -4,7 +4,6 @@ import { Song } from "../types";
 import { songSchema } from "../schemas";
 import { z } from "zod";
 
-
 import { useStore } from "@/src/Providers/store-provider";
 import { addSongToDatabase } from "../services/add-song-to-database";
 import { getSongs } from "../queries/get-songs";
@@ -13,10 +12,7 @@ import { deleteSongOnDatabase } from "../services/delete-song-on-database";
 
 const useSongs = () => {
   const queryClient = useQueryClient();
-  const {
-    updateSongOnLocalStorage,
-    removeSongOnLocalStorage,
-  } = useStore();
+  const { updateSongOnLocalStorage, removeSongOnLocalStorage } = useStore();
   const { data: songs = [], status } = useQuery<Song[], Error>({
     queryKey: ["songs"],
     queryFn: getSongs,

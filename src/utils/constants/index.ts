@@ -67,3 +67,24 @@ export const musicGenres = [
   "Gospel",
   "Indie",
 ];
+
+export const movieGenres = [
+  "Ação",
+  "Aventura",
+  "Drama",
+  "Comédia",
+  "Terror",
+  "Suspense",
+  "Ficção Científica",
+  "Fantasia",
+  "Animação",
+  "Romance",
+  "Musical",
+  "Guerra",
+  "Biografia",
+  "Histórico",
+  "Crime",
+  "Mistério",
+  "Documentário",
+  "Western",
+];

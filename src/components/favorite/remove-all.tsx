@@ -14,9 +14,9 @@ import { useStore } from "@/src/Providers/store-provider";
 export default function RemoveAllFavorites({
   type,
 }: {
-  type: "people" | "songs";
+  type: "people" | "songs" | "movies";
 }) {
-  const { resetFavoritePeople, resetFavoriteSongs } = useStore();
+  const { resetFavoritePeople, resetFavoriteSongs, resetFavoriteMovies } = useStore();
   const { loading, startLoading, stopLoading } = useLoading();
   const [open, setOpen] = React.useState(false);
 
@@ -33,6 +33,7 @@ export default function RemoveAllFavorites({
       startLoading();
       if (type === "people") return resetFavoritePeople();
       if (type === "songs") return resetFavoriteSongs();
+      if (type === "movies") return resetFavoriteMovies();
     } finally {
       setOpen(false);
       stopLoading();

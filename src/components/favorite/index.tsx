@@ -4,33 +4,37 @@ import { useStore } from "@/src/Providers/store-provider";
 import { cn } from "@/src/utils";
 import { Person } from "@/src/features/people/types";
 import { Song } from "@/src/features/songs/types";
+import { Movie } from "@/src/features/movies/types";
 
 type Favorite =
   | { type: "person"; item: Person }
-  | { type: "movies"; item: {} }
+  | { type: "movies"; item: Movie }
   | { type: "songs"; item: Song };
 
 const FavoriteIconButton = (payload: Favorite) => {
   const { item, type } = payload;
-  const { favoritePerson, isPersonFavorited, isSongFavorited, favoriteSong } =
-    useStore();
+  const {
+    favoritePerson,
+    isPersonFavorited,
+    isSongFavorited,
+    favoriteSong,
+    isMovieFavorited,
+    favoriteMovie,
+  } = useStore();
   const handleClick = () => {
-    if (type === "person") {
-      return favoritePerson(item);
-    }
-    if (type === "songs") {
-      return favoriteSong(item);
-    }
+    if (type === "person") return favoritePerson(item);
+
+    if (type === "songs") return favoriteSong(item);
+
+    if (type === "movies") return favoriteMovie(item);
   };
 
   const checkFavorite = () => {
-    if (type === "person") {
-      return isPersonFavorited(item);
-    }
+    if (type === "person") return isPersonFavorited(item);
 
-    if (type === "songs") {
-      return isSongFavorited(item);
-    }
+    if (type === "songs") return isSongFavorited(item);
+
+    if (type === "movies") return isMovieFavorited(item);
 
     return false;
   };
