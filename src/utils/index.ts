@@ -64,3 +64,99 @@ export const simulateServerDelay = () => {
 export const getRandomNumber = ({ min, max }: { min: number; max: number }) => {
   return Math.floor(Math.random() * (max - min) + min);
 };
+
+export function validPhoneNumber(value: string) {
+  const isString = typeof value === 'string';
+  const isValid = /^\(\d{2}\) (9?\d{4}-\d{4})$/.test(value);
+
+  const DDD = value.slice(1, 3);
+  const nineDigit = value.slice(5, 6) === '9';
+
+  const ValidDDD = DDDArray.includes(DDD);
+
+  if (!isString) return false;
+  if (!isValid) return false;
+  if (!ValidDDD) return false;
+  if (value.length === 15 && !nineDigit) return false;
+  if (value.length < 14 || value.length > 15) return false;
+
+  const phoneNumbes =
+    value.length === 15
+      ? value.slice(6).replace('-', '').split('').map(Number)
+      : value.slice(5).replace('-', '').split('').map(Number);
+
+  const items = [...new Set(phoneNumbes)];
+  if (items.length === 1) return false;
+
+  return true;
+}
+
+const DDDArray = [
+  '11',
+  '12',
+  '13',
+  '14',
+  '15',
+  '16',
+  '17',
+  '18',
+  '19',
+  '21',
+  '22',
+  '24',
+  '27',
+  '28',
+  '31',
+  '32',
+  '33',
+  '34',
+  '35',
+  '37',
+  '38',
+  '41',
+  '42',
+  '43',
+  '44',
+  '45',
+  '46',
+  '47',
+  '48',
+  '49',
+  '51',
+  '53',
+  '54',
+  '55',
+  '61',
+  '62',
+  '63',
+  '64',
+  '65',
+  '66',
+  '67',
+  '68',
+  '69',
+  '71',
+  '73',
+  '74',
+  '75',
+  '77',
+  '79',
+  '81',
+  '82',
+  '83',
+  '84',
+  '85',
+  '86',
+  '87',
+  '88',
+  '89',
+  '91',
+  '92',
+  '93',
+  '94',
+  '95',
+  '96',
+  '97',
+  '98',
+  '99',
+];

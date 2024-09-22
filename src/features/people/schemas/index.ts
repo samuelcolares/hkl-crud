@@ -1,4 +1,4 @@
-import { validCPF } from "@/src/utils";
+import { validCPF, validPhoneNumber } from "@/src/utils";
 import systemMessages from "@/src/utils/constants";
 import { z } from "zod";
 
@@ -13,7 +13,17 @@ export const peopleSchema = z.object({
         validCPF(fiscalId.replace(/\./g, "").replace(/-/g, "")),
       systemMessages.error.cpf
     ),
-  email: z.string().email(),
-  phone: z.string(),
-  avatarUrl: z.string(),
+  email: z
+    .string({
+      required_error: systemMessages.required.email,
+    })
+    .email({
+      message: systemMessages.error.email,
+    }),
+  phone: z
+    .string()
+    .refine((PN: string) => validPhoneNumber(PN), systemMessages.error.phone),
+  avatarUrl: z.string({
+    required_error: systemMessages.required.avatarUrl,
+  }),
 });

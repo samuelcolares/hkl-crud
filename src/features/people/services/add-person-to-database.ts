@@ -4,6 +4,9 @@ import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
 import { Person } from "../types";
 import { simulateServerDelay } from "@/src/utils";
+import { verifyCPF } from "./verify-cpf";
+import { verifyPhone } from "./verify-phone";
+import { verifyEmail } from "./verify-email";
 
 export const addPersonToDatabase = async (
   person: z.infer<typeof peopleSchema>
@@ -11,6 +14,11 @@ export const addPersonToDatabase = async (
   try {
     const withDelay = async () => {
       await simulateServerDelay();
+      await Promise.all([
+        verifyCPF(person.cpf),
+        verifyPhone(person.phone),
+        verifyEmail(person.email),
+      ]);
       return await axios.post("http://localhost:5000/people", person);
     };
 

@@ -19,6 +19,9 @@ import AvatarsDialog from "./avatar-dialog";
 // Types & Schemas
 import { Person } from "../../types";
 import { peopleSchema } from "../../schemas";
+import { verifyCPF } from "../../services/verify-cpf";
+import { verifyPhone } from "../../services/verify-phone";
+import { verifyEmail } from "../../services/verify-email";
 
 const emptyValues: z.infer<typeof peopleSchema> = {
   cpf: "",
@@ -58,14 +61,26 @@ const PeopleForm = ({ defaultValues }: { defaultValues?: Person }) => {
     try {
       startLoading();
 
-      if (defaultValues) {
-        return await editPerson({
-          id: defaultValues.id,
-          ...values,
-        });
+      if (!defaultValues) {
+        return await addPerson(values);
       }
 
-      return await addPerson(values);
+      if (defaultValues && defaultValues.cpf !== values.cpf) {
+        await verifyCPF(values.cpf);
+      }
+
+      if (defaultValues && defaultValues.phone !== values.phone) {
+        await verifyPhone(values.phone);
+      }
+
+      if (defaultValues && defaultValues.email !== values.email) {
+        await verifyEmail(values.email);
+      }
+
+      return await editPerson({
+        id: defaultValues.id,
+        ...values,
+      });
     } finally {
       stopLoading();
     }
