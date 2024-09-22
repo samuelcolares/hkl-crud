@@ -9,7 +9,7 @@ import usePeople from "../../hooks/use-people.hook";
 import useAvatars from "../../hooks/use-avatars.hook";
 
 // Components
-import { Input, MaskInput } from "@/src/components/ui/input";
+import { Input, MaskInput, MultiSelectInput } from "@/src/components/ui/input";
 import { Box, Button, Stack } from "@mui/material";
 import LoaderCircle from "@/src/components/ui/icons/loader-circle";
 import AddIcon from "@mui/icons-material/PersonAddAlt1";
@@ -22,6 +22,7 @@ import { personSchema } from "../../schemas";
 import { verifyCPF } from "../../services/verify-cpf";
 import { verifyPhone } from "../../services/verify-phone";
 import { verifyEmail } from "../../services/verify-email";
+import { useStore } from "@/src/Providers/store-provider";
 
 const emptyValues: z.infer<typeof personSchema> = {
   cpf: "",
@@ -29,11 +30,14 @@ const emptyValues: z.infer<typeof personSchema> = {
   name: "",
   phone: "",
   avatarUrl: "",
+  movies: [],
+  songs: [],
 };
 
 const PersonForm = ({ defaultValues }: { defaultValues?: Person }) => {
   const { avatars, status } = useAvatars();
   const { addPerson, editPerson } = usePeople();
+  const { songs, movies } = useStore();
   const { loading, startLoading, stopLoading } = useLoading();
   const { handleSubmit, control, setValue } = useForm<
     z.infer<typeof personSchema>
@@ -46,6 +50,8 @@ const PersonForm = ({ defaultValues }: { defaultValues?: Person }) => {
           cpf: defaultValues.cpf,
           phone: defaultValues.phone,
           avatarUrl: defaultValues.avatarUrl,
+          movies: defaultValues.movies,
+          songs: defaultValues.songs,
         }
       : emptyValues,
   });
@@ -119,6 +125,26 @@ const PersonForm = ({ defaultValues }: { defaultValues?: Person }) => {
           label="Telefone"
           inputVariant="phoneNumber"
           setValue={setValue}
+        />
+      </Box>
+      <Box component={"div"} className="flex gap-4">
+        <MultiSelectInput
+          control={control}
+          name="movies"
+          itemsArray={movies.map((item) => item.title)}
+          type="movies"
+          setValue={setValue}
+          disabled={loading}
+          label="Filmes"
+        />
+        <MultiSelectInput
+          control={control}
+          name="songs"
+          itemsArray={songs.map((item) => item.name)}
+          type="songs"
+          setValue={setValue}
+          disabled={loading}
+          label="Músicas"
         />
       </Box>
       <Button

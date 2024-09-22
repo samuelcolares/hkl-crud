@@ -5,6 +5,8 @@ export type Person = {
   phone: string;
   cpf: string;
   avatarUrl: string;
+  movies: string[];
+  songs: string[];
 };
 
 export type Avatar = {

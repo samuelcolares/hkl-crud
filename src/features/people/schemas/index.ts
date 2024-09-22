@@ -26,4 +26,6 @@ export const personSchema = z.object({
   avatarUrl: z.string({
     required_error: systemMessages.required.avatarUrl,
   }),
+  movies: z.array(z.string()),
+  songs: z.array(z.string()),
 });

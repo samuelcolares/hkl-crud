@@ -10,8 +10,10 @@ import { z } from "zod";
 import { personSchema } from "@/src/features/people/schemas";
 import {
   Box,
+  Checkbox,
   FormControl,
   InputLabel,
+  ListItemText,
   MenuItem,
   Select,
   SelectChangeEvent,
@@ -19,6 +21,9 @@ import {
 import { songSchema } from "@/src/features/songs/schemas";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import { movieSchema } from "@/src/features/movies/schemas";
+import { Movie } from "@/src/features/movies/types";
+import { Song } from "@/src/features/songs/types";
+import { useState } from "react";
 
 type FormInputProps = {
   name: string;
@@ -238,6 +243,89 @@ export const MaskPhoneNumberInput = ({
           variant={variant}
           disabled={disabled}
         />
+      )}
+    />
+  );
+};
+
+type PersonSchema = z.infer<typeof personSchema>;
+type Action2 =
+  | { type: "movies"; itemsArray: Movie[] }
+  | { type: "songs"; itemsArray: Song[] };
+
+type MultiSelectInputs = FormInputProps & {
+  itemsArray: string[];
+  type: "movies" | "songs";
+  defaultValues?: string[];
+  setValue: UseFormSetValue<PersonSchema>;
+};
+
+export const MultiSelectInput: React.FC<MultiSelectInputs> = ({
+  control,
+  name,
+  type,
+  setValue,
+  label,
+  disabled = false,
+  size = "small",
+  variant = "standard",
+  itemsArray,
+  defaultValues,
+}) => {
+  const [checkedItems, setCheckedItems] = useState<string[]>(
+    defaultValues ?? []
+  );
+  const handleChange = (event: SelectChangeEvent<string[]>) => {
+    const {
+      target: { value },
+    } = event;
+    setCheckedItems(typeof value === "string" ? value.split(",") : value);
+    setValue(type, typeof value === "string" ? value.split(",") : value);
+  };
+  return (
+    <Controller
+      name={name}
+      control={control}
+      render={({
+        field: { onChange, value },
+        fieldState: { error },
+        formState,
+      }) => (
+        <FormControl sx={{ m: 1, width: 300 }}>
+          <InputLabel
+            id="demo-multiple-checkbox-label"
+            className="text-white as"
+          >
+            {label}
+          </InputLabel>
+          <Select
+            disabled={disabled}
+            size={size}
+            labelId="demo-multiple-checkbox-label"
+            id="demo-multiple-checkbox"
+            multiple
+            value={value}
+            onChange={handleChange}
+            input={<OutlinedInput label={label} />}
+            renderValue={(selected) => selected.join(", ")}
+            className="text-white p-2 rounded-md border-white"
+            MenuProps={MenuProps}
+            sx={{
+              maxHeight: 200,
+              overflow: `auto`,
+              "& .css-1xomo8h-MuiPaper-root-MuiPopover-paper-MuiMenu-paper": {
+                background: "#000",
+              },
+            }}
+          >
+            {itemsArray.map((item) => (
+              <MenuItem key={item} value={item}>
+                <Checkbox checked={checkedItems.includes(item)} />
+                <ListItemText primary={item} />
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       )}
     />
   );
