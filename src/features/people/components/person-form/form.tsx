@@ -100,7 +100,7 @@ const PersonForm = ({ defaultValues }: { defaultValues?: Person }) => {
       component={"form"}
       onSubmit={handleSubmit(onSubmit)}
       sx={{ border: 1, borderColor: "#494E55" }}
-      className="space-y-4 p-4 rounded-md backdrop-blur-sm mt-8 border-2 border-primary bg-black/80"
+      className="space-y-4 p-4 rounded-md mt-8 border-2 border-primary bg-black/80"
     >
       <Stack
         direction={{
