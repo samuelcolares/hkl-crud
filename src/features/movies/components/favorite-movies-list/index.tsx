@@ -12,8 +12,10 @@ import systemMessages from "@/src/utils/constants";
 
 export default function FavoriteMoviesList({
   variant,
+  className,
 }: {
   variant: "md" | "lg";
+  className?: string;
 }) {
   const { favoriteMovies } = useStore();
   const router = useRouter();
@@ -36,7 +38,7 @@ export default function FavoriteMoviesList({
         border: 1,
         backdropFilter: "blur(5px)",
       }}
-      className="border-white rounded-md"
+      className={cn("border-white rounded-md max-xl:max-w-full", className)}
       subheader={
         <ListSubheader className="bg-primary text-white font-bold flex items-center justify-between p-4">
           <Typography>

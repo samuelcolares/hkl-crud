@@ -10,12 +10,10 @@ export const Route = createFileRoute("/")({
 
 function HomeComponent() {
   return (
-    <Container maxWidth={"lg"} className="space-y-2 mt-12">
-      <Stack direction={"row"} spacing={4}>
-        <FavoritePeopleList variant="lg" />
-        <FavoriteMoviesList variant="lg" />
-        <FavoriteSongsList variant="lg" />
-      </Stack>
-    </Container>
+    <>
+      <FavoritePeopleList variant="lg" />
+      <FavoriteMoviesList variant="lg" />
+      <FavoriteSongsList variant="lg" />
+    </>
   );
 }

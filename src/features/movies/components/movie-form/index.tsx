@@ -7,6 +7,7 @@ import MovieForm from "./form";
 import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import MovieIcon from "@mui/icons-material/Movie";
+import { cn } from "@/src/utils";
 
 type MovieDialogProps = {
   defaultValues?: Movie;
@@ -35,7 +36,10 @@ const MovieDialog: React.FC<MovieDialogProps> = ({
         <Button
           variant="outlined"
           onClick={handleClickOpen}
-          className="border-primary text-white hover:bg-primary hover:border-white flex ml-auto"
+          className={cn(
+            "border-primary text-white hover:bg-primary hover:border-white flex ml-auto",
+            className
+          )}
           endIcon={<MovieIcon />}
         >
           Adicionar Filme

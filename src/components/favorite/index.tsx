@@ -42,7 +42,7 @@ const FavoriteIconButton = (payload: Favorite) => {
     <IconButton aria-label="delete" color="primary" onClick={handleClick}>
       <StarIcon
         className={cn(
-          "text-white hover:text-yellow-200 transition-colors hover:animate-pulse active:scale-110",
+          "text-white xl:hover:text-yellow-200 transition-colors xl:hover:animate-pulse active:scale-110",
           checkFavorite() && "text-yellow-400"
         )}
       />
