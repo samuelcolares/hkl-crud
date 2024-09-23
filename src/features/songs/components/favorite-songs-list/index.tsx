@@ -40,7 +40,7 @@ export default function FavoriteSongsList({
         border: 1,
         backdropFilter: "blur(5px)",
       }}
-      className={cn("border-white rounded-md max-xl:max-w-full", className)}
+      className={cn("border-white rounded-md max-xl:max-w-full xl:!mt-0", className)}
       subheader={
         <ListSubheader className="bg-primary text-white font-bold flex items-center justify-between p-4">
           <Typography>
