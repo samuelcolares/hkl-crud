@@ -36,7 +36,6 @@ export default function SongsList({ className }: { className?: string }) {
           <Typography>
             Músicas {songs.length > 0 && `(${songs.length})`}
           </Typography>
-          <RemoveAllFavorites type="songs" />
         </ListSubheader>
       }
     >

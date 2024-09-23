@@ -36,7 +36,6 @@ export default function MoviesList({ className }: { className?: string }) {
           <Typography>
             Filmes {movies.length > 0 && `(${movies.length})`}
           </Typography>
-          <RemoveAllFavorites type="movies" />
         </ListSubheader>
       }
     >

@@ -12,7 +12,6 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import { DeleteDialog } from "@/src/components/delete-dialog";
 import FavoriteIconButton from "@/src/components/favorite";
-import RemoveAllFavorites from "@/src/components/favorite/remove-all";
 import { IconButton, ListSubheader, Menu, Typography } from "@mui/material";
 
 import { cn } from "@/src/utils";
@@ -39,7 +38,6 @@ export default function PeopleList({ className }: { className?: string }) {
             Pessoas
             {people.length > 0 && `(${people.length})`}
           </Typography>
-          <RemoveAllFavorites type="people" />
         </ListSubheader>
       }
     >
