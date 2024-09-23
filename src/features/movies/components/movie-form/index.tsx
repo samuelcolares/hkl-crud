@@ -1,13 +1,14 @@
-import { Movie } from "../../types";
-
 import * as React from "react";
+
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import MovieForm from "./form";
 import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import MovieIcon from "@mui/icons-material/Movie";
+
 import { cn } from "@/src/utils";
+import { Movie } from "../../types";
 
 type MovieDialogProps = {
   defaultValues?: Movie;

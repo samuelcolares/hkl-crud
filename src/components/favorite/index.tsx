@@ -1,10 +1,12 @@
-import { IconButton } from "@mui/material";
-import StarIcon from "@mui/icons-material/Grade";
 import { useStore } from "@/src/Providers/store-provider";
+
+import StarIcon from "@mui/icons-material/Grade";
+import { IconButton } from "@mui/material";
+
 import { cn } from "@/src/utils";
-import { Person } from "@/src/features/people/types";
 import { Song } from "@/src/features/songs/types";
 import { Movie } from "@/src/features/movies/types";
+import { Person } from "@/src/features/people/types";
 
 type Favorite =
   | { type: "person"; item: Person }

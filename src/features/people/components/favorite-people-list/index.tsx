@@ -1,17 +1,18 @@
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-
-import Avatar from "@mui/material/Avatar";
 import { useStore } from "@/src/Providers/store-provider";
+import { useLocation, useRouter } from "@tanstack/react-router";
+
+import List from "@mui/material/List";
+import Avatar from "@mui/material/Avatar";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
+import RemoveAllFavorites from "@/src/components/favorite/remove-all";
 import FavoriteIconButton from "@/src/components/favorite";
 import { ListSubheader, Typography } from "@mui/material";
-import { useLocation, useRouter } from "@tanstack/react-router";
-import { cn } from "@/src/utils";
-import RemoveAllFavorites from "@/src/components/favorite/remove-all";
+
 import systemMessages from "@/src/utils/constants";
+import { cn } from "@/src/utils";
 
 export default function FavoritePeopleList({
   variant,

@@ -2,26 +2,24 @@ import * as React from "react";
 import { useStore } from "@/src/Providers/store-provider";
 
 import List from "@mui/material/List";
-import Avatar from "@mui/material/Avatar";
-import ZoomCard from "../person-card/zoom-card";
 import ListItem from "@mui/material/ListItem";
-import MenuItem from "@mui/material/MenuItem";
 import ListItemText from "@mui/material/ListItemText";
-import PersonDialog from "../person-form";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-import { DeleteDialog } from "@/src/components/delete-dialog";
-import FavoriteIconButton from "@/src/components/favorite";
-import RemoveAllFavorites from "@/src/components/favorite/remove-all";
+import MenuItem from "@mui/material/MenuItem";
 import { IconButton, ListSubheader, Menu, Typography } from "@mui/material";
+import RemoveAllFavorites from "@/src/components/favorite/remove-all";
+import { DeleteDialog } from "@/src/components/delete-dialog";
+import SongDialog from "../song-form";
+import FavoriteIconButton from "@/src/components/favorite";
 
 import { cn } from "@/src/utils";
-import { Person } from "../../types";
+import { Song } from "../../types";
 
-export default function PeopleList({ className }: { className?: string }) {
-  const { people, peopleStatus, favoritePerson } = useStore();
 
-  if (peopleStatus !== "success") return null;
+export default function SongsList({ className }: { className?: string }) {
+  const { songs, songsStatus } = useStore();
+
+  if (songsStatus !== "success") return null;
 
   return (
     <List
@@ -36,30 +34,22 @@ export default function PeopleList({ className }: { className?: string }) {
       subheader={
         <ListSubheader className="bg-primary text-white font-bold flex items-center justify-between p-4">
           <Typography>
-            Pessoas
-            {people.length > 0 && `(${people.length})`}
+            Músicas {songs.length > 0 && `(${songs.length})`}
           </Typography>
-          <RemoveAllFavorites type="people" />
+          <RemoveAllFavorites type="songs" />
         </ListSubheader>
       }
     >
-      {people &&
-        people.map((person) => {
+      {songs &&
+        songs.map((song) => {
           return (
             <ListItem
-              key={person.id}
-              secondaryAction={<Options person={person} />}
+              key={song.id}
+              secondaryAction={<Options song={song} />}
               className="py-1 gap-1 hover:bg-black/30"
             >
-              <ListItemAvatar>
-                <Avatar
-                  alt={person.name + person.id}
-                  src={person.avatarUrl}
-                  className={cn("w-12 h-12")}
-                />
-              </ListItemAvatar>
               <ListItemText
-                id={person.id}
+                id={song.id}
                 sx={{
                   "& .MuiTypography-root": {
                     fontSize: "1rem",
@@ -69,8 +59,8 @@ export default function PeopleList({ className }: { className?: string }) {
                     fontSize: ".7rem",
                   },
                 }}
-                primary={person.name}
-                secondary={person.email}
+                primary={song.name}
+                secondary={song.genre}
                 className="text-white"
               />
             </ListItem>
@@ -80,7 +70,7 @@ export default function PeopleList({ className }: { className?: string }) {
   );
 }
 
-function Options({ person }: { person: Person }) {
+function Options({ song }: { song: Song }) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -112,16 +102,13 @@ function Options({ person }: { person: Person }) {
         }}
       >
         <MenuItem>
-          <ZoomCard person={person} />
+          <SongDialog variant="edit" defaultValues={song} />
         </MenuItem>
         <MenuItem>
-          <PersonDialog variant="edit" defaultValues={person} />
+          <DeleteDialog type="songs" id={song.id} />
         </MenuItem>
         <MenuItem>
-          <DeleteDialog type="people" id={person.id} />
-        </MenuItem>
-        <MenuItem>
-          <FavoriteIconButton type="person" item={person} />
+          <FavoriteIconButton type="songs" item={song} />
         </MenuItem>
         <MenuItem onClick={handleClose}>Fechar</MenuItem>
       </Menu>

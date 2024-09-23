@@ -7,6 +7,7 @@ import SongForm from "./form";
 import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import SongIcon from "@mui/icons-material/MusicNote";
+import { cn } from "@/src/utils";
 
 type SongDialogProps = {
   defaultValues?: Song;
@@ -35,7 +36,10 @@ const SongDialog: React.FC<SongDialogProps> = ({
         <Button
           variant="outlined"
           onClick={handleClickOpen}
-          className="border-primary text-white hover:bg-primary hover:border-white flex ml-auto"
+          className={cn(
+            "border-primary text-white hover:bg-primary hover:border-white flex ml-auto",
+            className
+          )}
           endIcon={<SongIcon />}
         >
           Adicionar Música

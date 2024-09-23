@@ -1,16 +1,23 @@
+import * as React from "react";
+import { useStore } from "@/src/Providers/store-provider";
+
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-
-import Avatar from "@mui/material/Avatar";
-import { useStore } from "@/src/Providers/store-provider";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import MenuItem from "@mui/material/MenuItem";
 import { IconButton, ListSubheader, Menu, Typography } from "@mui/material";
-import { cn } from "@/src/utils";
 import RemoveAllFavorites from "@/src/components/favorite/remove-all";
+import { DeleteDialog } from "@/src/components/delete-dialog";
+import MovieDialog from "../movie-form";
+import FavoriteIconButton from "@/src/components/favorite";
+
+import { cn } from "@/src/utils";
+import { Movie } from "../../types";
+
 
 export default function MoviesList({ className }: { className?: string }) {
-  const { movies, moviesStatus, favoriteMovie } = useStore();
+  const { movies, moviesStatus } = useStore();
 
   if (moviesStatus !== "success") return null;
 
@@ -62,14 +69,6 @@ export default function MoviesList({ className }: { className?: string }) {
     </List>
   );
 }
-
-import * as React from "react";
-import MenuItem from "@mui/material/MenuItem";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import { Movie } from "../../types";
-import { DeleteDialog } from "@/src/components/delete-dialog";
-import MovieDialog from "../movie-form";
-import FavoriteIconButton from "@/src/components/favorite";
 
 function Options({ movie }: { movie: Movie }) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);

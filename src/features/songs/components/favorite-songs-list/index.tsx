@@ -1,19 +1,23 @@
+import { useLocation, useRouter } from "@tanstack/react-router";
+import { useStore } from "@/src/Providers/store-provider";
+
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import { useStore } from "@/src/Providers/store-provider";
 import FavoriteIconButton from "@/src/components/favorite";
 import { ListSubheader, Typography } from "@mui/material";
-import { useLocation, useRouter } from "@tanstack/react-router";
-import { cn } from "@/src/utils";
 import RemoveAllFavorites from "@/src/components/favorite/remove-all";
+
+import { cn } from "@/src/utils";
 import systemMessages from "@/src/utils/constants";
 
 export default function FavoriteSongsList({
   variant,
+  className,
 }: {
   variant: "md" | "lg";
+  className?: string;
 }) {
   const { favoriteSongs } = useStore();
   const router = useRouter();
@@ -36,7 +40,7 @@ export default function FavoriteSongsList({
         border: 1,
         backdropFilter: "blur(5px)",
       }}
-      className="border-white rounded-md"
+      className={cn("border-white rounded-md max-xl:max-w-full", className)}
       subheader={
         <ListSubheader className="bg-primary text-white font-bold flex items-center justify-between p-4">
           <Typography>
@@ -54,8 +58,6 @@ export default function FavoriteSongsList({
             secondaryAction={<FavoriteIconButton type="songs" item={song} />}
             className="py-1 gap-4 hover:bg-black/30"
           >
-            {/* <ListItemButton>
-              </ListItemButton> */}
             <ListItemText
               id={song.id}
               sx={{
@@ -63,9 +65,9 @@ export default function FavoriteSongsList({
                   fontSize: variant === "md" ? "1rem" : "1.5rem",
                   color: "white",
                 },
-                "& .MuiListItemText-secondary":{
+                "& .MuiListItemText-secondary": {
                   fontSize: variant === "md" ? ".7rem" : "1rem",
-                }
+                },
               }}
               primary={song.name}
               secondary={song.singerOrBand}
