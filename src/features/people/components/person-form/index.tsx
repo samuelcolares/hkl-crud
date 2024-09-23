@@ -55,7 +55,7 @@ const PersonDialog: React.FC<PersonDialogProps> = ({
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
-        className="p-0 max-lg:bg-black/60 backdrop-blur-sm"
+        className="p-0 max-lg:bg-black/60 "
         fullWidth
         maxWidth={"md"}
         sx={{

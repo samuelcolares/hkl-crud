@@ -9,16 +9,10 @@ import PeopleIcon from "@mui/icons-material/People";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import MovieIcon from "@mui/icons-material/Movie";
 import MobileMenu from "./mobile-menu";
-import { useState } from "react";
 import SearchInput from "./search";
 
 export default function SearchAppBar() {
-  const [query, setQuery] = useState<string>("");
-  const handleQuery = () => {
-    if (query.length > 0) {
-      console.log(`oi`);
-    }
-  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
