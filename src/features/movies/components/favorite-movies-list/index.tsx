@@ -1,14 +1,16 @@
+import { useLocation, useRouter } from "@tanstack/react-router";
+import { useStore } from "@/src/Providers/store-provider";
+
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import { useStore } from "@/src/Providers/store-provider";
 import FavoriteIconButton from "@/src/components/favorite";
 import { ListSubheader, Typography } from "@mui/material";
-import { useLocation, useRouter } from "@tanstack/react-router";
-import { cn } from "@/src/utils";
 import RemoveAllFavorites from "@/src/components/favorite/remove-all";
+
 import systemMessages from "@/src/utils/constants";
+import { cn } from "@/src/utils";
 
 export default function FavoriteMoviesList({
   variant,

@@ -1,4 +1,3 @@
-import * as React from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -11,6 +10,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import PeopleIcon from "@mui/icons-material/People";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import MovieIcon from "@mui/icons-material/Movie";
+import MobileMenu from "./mobile-menu";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -21,7 +21,7 @@ const Search = styled("div")(({ theme }) => ({
   },
   marginLeft: 0,
   width: "100%",
-  [theme.breakpoints.up("sm")]: {
+  [theme.breakpoints.up(1024)]: {
     marginLeft: theme.spacing(1),
     width: "auto",
   },
@@ -45,7 +45,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up(1024)]: {
       width: "12ch",
       "&:focus": {
         width: "20ch",
@@ -66,23 +66,11 @@ export default function SearchAppBar() {
         position="relative"
       >
         <Toolbar>
-          {/* <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton> */}
+          <MobileMenu />
           <Stack
             spacing={0.5}
             direction={"row"}
-            sx={{
-              display: { xs: "none", sm: "flex" },
-
-              flexGrow: 1,
-            }}
+            className="flex-1 hidden lg:flex"
           >
             <NavbarLink Icon={HomeIcon} label="Início" to="/" />
             <NavbarLink Icon={PeopleIcon} label="Pessoas" to="/pessoas" />

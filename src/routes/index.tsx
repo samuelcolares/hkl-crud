@@ -12,10 +12,10 @@ const desktop = "(min-width: 1200px)";
 function HomeComponent() {
   const isDesktop = useMediaQuery(desktop);
   return (
-    <>
+    <div className="flex gap-8 mx-auto lg:flex-nowrap flex-wrap w-full">
       <FavoritePeopleList variant={isDesktop ? "lg" : "md"} />
       <FavoriteMoviesList variant={isDesktop ? "lg" : "md"} />
       <FavoriteSongsList variant={isDesktop ? "lg" : "md"} />
-    </>
+    </div>
   );
 }

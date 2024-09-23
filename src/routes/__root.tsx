@@ -17,7 +17,7 @@ function RootComponent() {
         <Stack
           direction={{ lg: "column", xl: "row" }}
           spacing={2}
-          className="space-y-4"
+          className="space-y-4 justify-center"
         >
           <Outlet />
         </Stack>

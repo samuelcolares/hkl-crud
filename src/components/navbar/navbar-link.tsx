@@ -16,12 +16,12 @@ type NavbarLinkProps = {
 const NavbarLink: React.FC<NavbarLinkProps> = ({ label, to, Icon }) => {
   const { pathname } = useLocation();
   return (
-    <Link to={to}>
+    <Link to={to} className="w-full lg:w-fit">
       <Button
         variant="text"
         startIcon={<Icon />}
         className={cn(
-          "text-white rounded-md hover:bg-white/20 capitalize",
+          "text-white rounded-md hover:bg-white/20 capitalize w-full lg:w-fit lg:justify-center justify-start",
           pathname === to && "bg-primary border-white"
         )}
       >
