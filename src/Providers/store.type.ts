@@ -38,4 +38,13 @@ type MoviesContext = {
   removeMovieOnLocalStorage: (movie: Movie | undefined) => void;
 };
 
-export type StoreContext = PeopleContext & SongsContext & MoviesContext;
+export type StoreContext = PeopleContext &
+  SongsContext &
+  MoviesContext & {
+    searchQuery: (queryString: string) => {
+      filteredMovies: Movie[];
+      filteredSongs: Song[];
+      filteredPeople: Person[];
+      status: "success" | "empty";
+    };
+  };

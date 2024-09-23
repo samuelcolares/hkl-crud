@@ -16,6 +16,7 @@ const errorMessages = {
 
 const minCharacteresMessages = {
   name: "Nome precisa ter no mínimo 4 letras.",
+  search: "Pesquisa precisa de no mínimo 1 letra."
 };
 
 const otherMessages = {

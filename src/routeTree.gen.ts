@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as PessoasIndexImport } from './routes/pessoas/index'
+import { Route as PesquisaIndexImport } from './routes/pesquisa/index'
 import { Route as MusicasIndexImport } from './routes/musicas/index'
 import { Route as FilmesIndexImport } from './routes/filmes/index'
 
@@ -25,6 +26,11 @@ const IndexRoute = IndexImport.update({
 
 const PessoasIndexRoute = PessoasIndexImport.update({
   path: '/pessoas/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const PesquisaIndexRoute = PesquisaIndexImport.update({
+  path: '/pesquisa/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -63,6 +69,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MusicasIndexImport
       parentRoute: typeof rootRoute
     }
+    '/pesquisa/': {
+      id: '/pesquisa/'
+      path: '/pesquisa'
+      fullPath: '/pesquisa'
+      preLoaderRoute: typeof PesquisaIndexImport
+      parentRoute: typeof rootRoute
+    }
     '/pessoas/': {
       id: '/pessoas/'
       path: '/pessoas'
@@ -79,6 +92,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/filmes': typeof FilmesIndexRoute
   '/musicas': typeof MusicasIndexRoute
+  '/pesquisa': typeof PesquisaIndexRoute
   '/pessoas': typeof PessoasIndexRoute
 }
 
@@ -86,6 +100,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/filmes': typeof FilmesIndexRoute
   '/musicas': typeof MusicasIndexRoute
+  '/pesquisa': typeof PesquisaIndexRoute
   '/pessoas': typeof PessoasIndexRoute
 }
 
@@ -94,15 +109,16 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/filmes/': typeof FilmesIndexRoute
   '/musicas/': typeof MusicasIndexRoute
+  '/pesquisa/': typeof PesquisaIndexRoute
   '/pessoas/': typeof PessoasIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/filmes' | '/musicas' | '/pessoas'
+  fullPaths: '/' | '/filmes' | '/musicas' | '/pesquisa' | '/pessoas'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/filmes' | '/musicas' | '/pessoas'
-  id: '__root__' | '/' | '/filmes/' | '/musicas/' | '/pessoas/'
+  to: '/' | '/filmes' | '/musicas' | '/pesquisa' | '/pessoas'
+  id: '__root__' | '/' | '/filmes/' | '/musicas/' | '/pesquisa/' | '/pessoas/'
   fileRoutesById: FileRoutesById
 }
 
@@ -110,6 +126,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FilmesIndexRoute: typeof FilmesIndexRoute
   MusicasIndexRoute: typeof MusicasIndexRoute
+  PesquisaIndexRoute: typeof PesquisaIndexRoute
   PessoasIndexRoute: typeof PessoasIndexRoute
 }
 
@@ -117,6 +134,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FilmesIndexRoute: FilmesIndexRoute,
   MusicasIndexRoute: MusicasIndexRoute,
+  PesquisaIndexRoute: PesquisaIndexRoute,
   PessoasIndexRoute: PessoasIndexRoute,
 }
 
@@ -135,6 +153,7 @@ export const routeTree = rootRoute
         "/",
         "/filmes/",
         "/musicas/",
+        "/pesquisa/",
         "/pessoas/"
       ]
     },
@@ -146,6 +165,9 @@ export const routeTree = rootRoute
     },
     "/musicas/": {
       "filePath": "musicas/index.tsx"
+    },
+    "/pesquisa/": {
+      "filePath": "pesquisa/index.tsx"
     },
     "/pessoas/": {
       "filePath": "pessoas/index.tsx"
