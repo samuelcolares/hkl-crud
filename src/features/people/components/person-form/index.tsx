@@ -36,7 +36,10 @@ const PersonDialog: React.FC<PersonDialogProps> = ({
         <Button
           variant="outlined"
           onClick={handleClickOpen}
-          className={cn("border-primary text-white hover:bg-primary hover:border-white flex ml-auto", className)}
+          className={cn(
+            "border-primary text-white hover:bg-primary hover:border-white flex ml-auto",
+            className
+          )}
           endIcon={<PersonIcon />}
         >
           Adicionar Pessoa
@@ -52,7 +55,7 @@ const PersonDialog: React.FC<PersonDialogProps> = ({
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
-        className="p-0"
+        className="p-0 max-lg:bg-black/60 backdrop-blur-sm"
         fullWidth
         maxWidth={"md"}
         sx={{

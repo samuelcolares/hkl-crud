@@ -100,21 +100,32 @@ const PersonForm = ({ defaultValues }: { defaultValues?: Person }) => {
       component={"form"}
       onSubmit={handleSubmit(onSubmit)}
       sx={{ border: 1, borderColor: "#494E55" }}
-      className="space-y-4 p-4 rounded-md backdrop-blur-sm mt-8 border-2 border-primary"
+      className="space-y-4 p-4 rounded-md backdrop-blur-sm mt-8 border-2 border-primary bg-black/80"
     >
-      <Stack direction={"row"} className="items-end" spacing={4}>
+      <Stack
+        direction={{
+          lg: "row",
+        }}
+        className="lg:items-end items-center"
+        spacing={4}
+      >
         <AvatarsDialog
           avatars={avatars}
           status={status}
           setAvatarUrl={setAvatarUrl}
           defaultAvatar={defaultValues?.avatarUrl}
         />
-        <Stack className="gap-4 flex-1">
+        <Stack className="gap-4 flex-1 w-full">
           <Input control={control} name="name" label="Nome" />
           <Input control={control} name="email" label="E-mail" />
         </Stack>
       </Stack>
-      <Box component={"div"} className="flex gap-4">
+      <Stack
+        direction={{
+          lg: "row",
+        }}
+        spacing={2}
+      >
         <MaskInput
           control={control}
           name="cpf"
@@ -129,8 +140,14 @@ const PersonForm = ({ defaultValues }: { defaultValues?: Person }) => {
           inputVariant="phoneNumber"
           setValue={setValue}
         />
-      </Box>
-      <Box component={"div"} className="flex gap-4">
+      </Stack>
+      <Stack
+        direction={{
+          lg: "row",
+        }}
+        spacing={2}
+        className="space-y-2"
+      >
         <MultiSelectInput
           control={control}
           name="movies"
@@ -149,7 +166,7 @@ const PersonForm = ({ defaultValues }: { defaultValues?: Person }) => {
           disabled={loading}
           label="Músicas"
         />
-      </Box>
+      </Stack>
       <Button
         type="submit"
         variant="contained"

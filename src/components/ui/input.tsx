@@ -291,7 +291,7 @@ export const MultiSelectInput: React.FC<MultiSelectInputs> = ({
         fieldState: { error },
         formState,
       }) => (
-        <FormControl sx={{ m: 1, width: 300 }}>
+        <FormControl className="w-full">
           <InputLabel
             id="demo-multiple-checkbox-label"
             className="text-white as"

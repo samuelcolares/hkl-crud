@@ -56,7 +56,7 @@ const MovieDialog: React.FC<MovieDialogProps> = ({
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
-        className="p-0"
+        className="p-0 bg-black/60 backdrop-blur-sm"
         fullWidth
         maxWidth={"md"}
         sx={{
