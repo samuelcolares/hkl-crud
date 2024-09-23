@@ -4,10 +4,10 @@ import FavoriteIconButton from "@/src/components/favorite";
 
 const MovieCard = ({ movie }: { movie: Movie }) => {
   return (
-    <div className="bg-primary/30 max-w-xs p-4 pr-12 rounded-md relative max-md:w-full">
+    <div className="bg-primary/30 max-w-xs p-4 h-24 pr-12 rounded-md relative max-md:w-full">
       <CardContent className="p-0">
         <Typography
-          className="text-white text-center max-md:text-left"
+          className="text-white text-left"
           gutterBottom
           variant="h5"
           component="div"
@@ -15,7 +15,7 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
           {movie.title}
         </Typography>
         <Typography
-          className="text-white"
+          className="text-white absolute bottom-4 left-4"
           variant="body2"
           sx={{ color: "text.secondary" }}
           padding={0}
