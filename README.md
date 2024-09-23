@@ -175,11 +175,27 @@ Os exemplos acima foram mostrando como iniciar a aplicação localmente com NPM,
 
 ![Página inicial][index]
 
-### 2. Pesquisa (Rota: '/buscar')
+### 2. Pesquisa (Rota: '/pesquisa')
 
 ![Pesquisa em carregamento][search-loading]
 ![Pesquisa 1][search-1]
 ![Pesquisa 2][search-2]
+
+### 3. Pessoas (Rota: '/pessoas')
+
+![pessoas 1][people-1]
+![pessoas 2][people-2]
+![pessoas 3][people-3]
+![pessoas 4][people-4]
+![pessoas 5][people-5]
+
+### 4. Responsivo
+
+![responsivo 1][index-responsive]
+![responsivo 2][menu-responsive]
+![responsivo 3][route-responsive]
+![responsivo 4][options-responsive]
+![responsivo 5][search-responsive]
 
 <p align="right">(<a href="#readme-top">Voltar ao inicío</a>)</p>
 
@@ -188,6 +204,12 @@ Os exemplos acima foram mostrando como iniciar a aplicação localmente com NPM,
 ## Roadmap
 
 ### 1. Início do processo criativo desenhado
+
+![desenho 1][draw-1]
+![desenho 2][draw-2]
+![desenho 3][draw-3]
+
+Algumas coisas podem se diferenciar dos esboços iniciais por conta de novas ideias que foram surgindo no caminho.
 
 ### 2. Mãos na massa.
 
@@ -208,3 +230,16 @@ Samuel Colares - samuelcolaresdequino@gmail.com
 [search-1]: https://imgur.com/TyzVjhF.jpeg
 [search-2]: https://i.imgur.com/XwetjD3.jpeg
 [search-loading]: https://i.imgur.com/Lkns5vE.jpeg
+[people-1]: https://i.imgur.com/4OSFoQJ.jpeg
+[people-2]: https://i.imgur.com/Lmft2G5.jpeg
+[people-3]: https://i.imgur.com/Epcg9XB.jpeg
+[people-4]: https://i.imgur.com/TPBzijI.jpeg
+[people-5]: https://i.imgur.com/pRoTIoE.jpeg
+[index-responsive]: https://i.imgur.com/sZlZSvP.jpeg
+[menu-responsive]: https://i.imgur.com/12Z6Vmu.jpeg
+[route-responsive]: https://i.imgur.com/VtxLWcE.jpeg
+[options-responsive]: https://i.imgur.com/GLIp9jR.jpeg
+[search-responsive]: https://i.imgur.com/2zdile0.jpeg
+[draw-1]: https://i.imgur.com/jpGM1En.png
+[draw-2]: https://i.imgur.com/4EjGB6h.png
+[draw-3]: https://i.imgur.com/PQ9xtW6.png

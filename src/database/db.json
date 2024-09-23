@@ -91,8 +91,16 @@
       "avatarUrl": "/src/public/avatars/avatar-1.webp",
       "createdAt": 1727055345460,
       "updatedAt": 1727056621059,
-      "movies": ["Avatar", "De Volta para o Futuro", "Titanic"],
-      "songs": ["Turning Tables", "Sulfur", "Walk of life"]
+      "movies": [
+        "Avatar",
+        "De Volta para o Futuro",
+        "Titanic"
+      ],
+      "songs": [
+        "Turning Tables",
+        "Sulfur",
+        "Walk of life"
+      ]
     },
     {
       "id": "2",
@@ -103,8 +111,16 @@
       "avatarUrl": "/src/public/avatars/avatar-2.webp",
       "createdAt": 1727055345460,
       "updatedAt": 1727056621059,
-      "movies": ["Avatar", "De Volta para o Futuro", "Titanic"],
-      "songs": ["Turning Tables", "Sulfur", "Walk of life"]
+      "movies": [
+        "Avatar",
+        "De Volta para o Futuro",
+        "Titanic"
+      ],
+      "songs": [
+        "Turning Tables",
+        "Sulfur",
+        "Walk of life"
+      ]
     },
     {
       "id": "3",
@@ -120,7 +136,11 @@
         "Jurassic Park: O Parque dos Dinossauros",
         "Matrix"
       ],
-      "songs": ["Nightmare", "Vermilion, Pt. 2", "Given to Fly"]
+      "songs": [
+        "Nightmare",
+        "Vermilion, Pt. 2",
+        "Given to Fly"
+      ]
     },
     {
       "id": "4",
@@ -131,7 +151,11 @@
       "avatarUrl": "/src/public/avatars/avatar-4.webp",
       "createdAt": 1727055345460,
       "updatedAt": 1727056585335,
-      "movies": ["Titanic", "Duro de Matar", "O Resgate do Soldado Ryan"],
+      "movies": [
+        "Titanic",
+        "Duro de Matar",
+        "O Resgate do Soldado Ryan"
+      ],
       "songs": [
         "O Senhor dos Anéis: O Retorno do Rei",
         "Um Sonho de Liberdade",
@@ -152,7 +176,11 @@
         "Homem-Aranha: Sem Volta Para Casa",
         "O Senhor dos Anéis: O Retorno do Rei"
       ],
-      "songs": ["Turning Tables", "I Appear Missing", "Walk of life"]
+      "songs": [
+        "Turning Tables",
+        "I Appear Missing",
+        "Walk of life"
+      ]
     },
     {
       "id": "6",
@@ -163,8 +191,16 @@
       "avatarUrl": "/src/public/avatars/avatar-6.webp",
       "createdAt": 1727055332278,
       "updatedAt": 1727055332278,
-      "movies": ["Avatar", "Duro de Matar", "De Volta para o Futuro"],
-      "songs": ["O Rei Leão", "Toy Story", "Interestelar"]
+      "movies": [
+        "Avatar",
+        "Duro de Matar",
+        "De Volta para o Futuro"
+      ],
+      "songs": [
+        "O Rei Leão",
+        "Toy Story",
+        "Interestelar"
+      ]
     },
     {
       "id": "7",
@@ -180,7 +216,11 @@
         "O Exterminador do Futuro",
         "De Volta para o Futuro"
       ],
-      "songs": ["Vermilion, Pt. 2", "Perfect Strangers", "Given to Fly"]
+      "songs": [
+        "Vermilion, Pt. 2",
+        "Perfect Strangers",
+        "Given to Fly"
+      ]
     },
     {
       "id": "8",
@@ -196,7 +236,11 @@
         "Frozen: Uma Aventura Congelante",
         "Toy Story"
       ],
-      "songs": ["Turning Tables", "Orange Moon", "Soldier of Fortune"]
+      "songs": [
+        "Turning Tables",
+        "Orange Moon",
+        "Soldier of Fortune"
+      ]
     },
     {
       "id": "9",
@@ -207,7 +251,11 @@
       "avatarUrl": "/src/public/avatars/avatar-9.webp",
       "createdAt": 1727055345460,
       "updatedAt": 1727055345460,
-      "movies": ["Titanic", "Gladiador", "O Exterminador do Futuro"],
+      "movies": [
+        "Titanic",
+        "Gladiador",
+        "O Exterminador do Futuro"
+      ],
       "songs": [
         "Homem-Aranha: Sem Volta Para Casa",
         "Interestelar",
@@ -228,23 +276,31 @@
         "Piratas do Caribe",
         "O Rei Leão"
       ],
-      "songs": ["No One Knows", "Skyfall", "Given to Fly"]
+      "songs": [
+        "No One Knows",
+        "Skyfall",
+        "Given to Fly"
+      ]
     },
     {
       "id": "11",
       "name": "Destiny Murray",
       "email": "destiny.murray@example.com",
-      "phone": "(56) 97019-8052",
+      "phone": "(21) 98732-4432",
       "cpf": "703.009.060-80",
       "avatarUrl": "/src/public/avatars/avatar-11.webp",
       "createdAt": 1727055345460,
-      "updatedAt": 1727055345460,
+      "updatedAt": 1727097229969,
       "movies": [
         "Pulp Fiction: Tempo de Violência",
         "Forrest Gump: O Contador de Histórias",
         "O Cavaleiro das Trevas"
       ],
-      "songs": ["Turning Tables", "Brothers in Arms", "Disasterpiece"]
+      "songs": [
+        "Turning Tables",
+        "Brothers in Arms",
+        "Disasterpiece"
+      ]
     },
     {
       "id": "12",
@@ -260,7 +316,11 @@
         "Piratas do Caribe",
         "Avatar"
       ],
-      "songs": ["Chokehold", "Appletree", "Sulfur"]
+      "songs": [
+        "Chokehold",
+        "Appletree",
+        "Sulfur"
+      ]
     },
     {
       "id": "13",
@@ -276,7 +336,11 @@
         "A Origem",
         "O Senhor dos Anéis: O Retorno do Rei"
       ],
-      "songs": ["Man i is", "The Summoning", "Appletree"]
+      "songs": [
+        "Man i is",
+        "The Summoning",
+        "Appletree"
+      ]
     },
     {
       "id": "14",
@@ -287,8 +351,16 @@
       "avatarUrl": "/src/public/avatars/avatar-14.webp",
       "createdAt": 1727055345460,
       "updatedAt": 1727055345460,
-      "movies": ["Piratas do Caribe", "Duro de Matar", "Toy Story"],
-      "songs": ["I Appear Missing", "Sign Of The Times", "Painkiller"]
+      "movies": [
+        "Piratas do Caribe",
+        "Duro de Matar",
+        "Toy Story"
+      ],
+      "songs": [
+        "I Appear Missing",
+        "Sign Of The Times",
+        "Painkiller"
+      ]
     },
     {
       "id": "15",
@@ -304,7 +376,11 @@
         "A Lista de Schindler",
         "Frozen: Uma Aventura Congelante"
       ],
-      "songs": ["Vingadores: Ultimato", "Gladiador", "Duro de Matar"]
+      "songs": [
+        "Vingadores: Ultimato",
+        "Gladiador",
+        "Duro de Matar"
+      ]
     },
     {
       "id": "16",
@@ -320,7 +396,11 @@
         "Toy Story",
         "Homem-Aranha: Sem Volta Para Casa"
       ],
-      "songs": ["Sulfur", "Perfect Strangers", "The Summoning"]
+      "songs": [
+        "Sulfur",
+        "Perfect Strangers",
+        "The Summoning"
+      ]
     },
     {
       "id": "17",
@@ -331,8 +411,16 @@
       "avatarUrl": "/src/public/avatars/avatar-17.webp",
       "createdAt": 1727055332278,
       "updatedAt": 1727055332278,
-      "movies": ["Pantera Negra", "Um Sonho de Liberdade", "Interestelar"],
-      "songs": ["Black", "Better Man", "No One Knows"]
+      "movies": [
+        "Pantera Negra",
+        "Um Sonho de Liberdade",
+        "Interestelar"
+      ],
+      "songs": [
+        "Black",
+        "Better Man",
+        "No One Knows"
+      ]
     },
     {
       "id": "18",
@@ -348,7 +436,11 @@
         "Clube da Luta",
         "Gladiador"
       ],
-      "songs": ["Man i is", "Fortress", "Appletree"]
+      "songs": [
+        "Man i is",
+        "Fortress",
+        "Appletree"
+      ]
     },
     {
       "id": "19",
@@ -359,8 +451,16 @@
       "avatarUrl": "/src/public/avatars/avatar-19.webp",
       "createdAt": 1727055345460,
       "updatedAt": 1727055345460,
-      "movies": ["O Cavaleiro das Trevas", "A Origem", "Gladiador"],
-      "songs": ["Black", "Nightmare", "Didn't Cha Know"]
+      "movies": [
+        "O Cavaleiro das Trevas",
+        "A Origem",
+        "Gladiador"
+      ],
+      "songs": [
+        "Black",
+        "Nightmare",
+        "Didn't Cha Know"
+      ]
     },
     {
       "id": "20",
@@ -376,7 +476,11 @@
         "Duro de Matar",
         "Jurassic Park: O Parque dos Dinossauros"
       ],
-      "songs": ["Soldier of Fortune", "Walk of life", "The Summoning"]
+      "songs": [
+        "Soldier of Fortune",
+        "Walk of life",
+        "The Summoning"
+      ]
     }
   ],
   "movies": [
