@@ -18,10 +18,15 @@ const minCharacteresMessages = {
   name: "Nome precisa ter no mínimo 4 letras.",
 };
 
+const otherMessages = {
+  noFavorites: "Não há favoritos",
+};
+
 const systemMessages = {
   required: { ...requiredMessages },
   error: { ...errorMessages },
   minCharacteres: { ...minCharacteresMessages },
+  other: { ...otherMessages },
 };
 
 export default systemMessages;

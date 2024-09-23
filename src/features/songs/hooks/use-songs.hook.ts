@@ -1,6 +1,6 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 
-import { Song } from "../types";
+import { Song, SongWithoutId } from "../types";
 import { songSchema } from "../schemas";
 import { z } from "zod";
 
@@ -9,6 +9,7 @@ import { addSongToDatabase } from "../services/add-song-to-database";
 import { getSongs } from "../queries/get-songs";
 import { editSongOnDatabase } from "../services/edit-song-on-database";
 import { deleteSongOnDatabase } from "../services/delete-song-on-database";
+import { generateTimestamp } from "@/src/utils";
 
 const useSongs = () => {
   const queryClient = useQueryClient();
@@ -20,7 +21,12 @@ const useSongs = () => {
   });
 
   const addSong = async (song: z.infer<typeof songSchema>) => {
-    const newSong = await addSongToDatabase(song);
+    const content: SongWithoutId = {
+      ...song,
+      createdAt: generateTimestamp(),
+      updatedAt: generateTimestamp(),
+    };
+    const newSong = await addSongToDatabase(content);
     addSongLocal(newSong);
   };
 

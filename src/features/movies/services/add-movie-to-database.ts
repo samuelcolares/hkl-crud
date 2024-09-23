@@ -1,24 +1,27 @@
-import { z } from "zod";
-import { movieSchema } from "../schemas";
 import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
-import { Movie } from "../types";
+import { Movie, MovieWithoutId } from "../types";
 import { simulateServerDelay } from "@/src/utils";
 
-export const addMovieToDatabase = async (movie: z.infer<typeof movieSchema>) => {
+export const addMovieToDatabase = async (movieWithoutId: MovieWithoutId) => {
   try {
     const withDelay = async () => {
       await simulateServerDelay();
-      return await axios.post("http://localhost:5000/movies", movie);
+      return await axios.post("http://localhost:5000/movies", movieWithoutId);
     };
 
-    const data = await toast.promise(withDelay(), {
+    const { data } = await toast.promise(withDelay(), {
       loading: `Salvando filme...`,
       success: `Filme salva no banco de dados!`,
-      error: `Erro ao adicionar ${movie.title} ao banco de dados.`,
+      error: `Erro ao adicionar ${movieWithoutId.title} ao banco de dados.`,
     });
 
-    return data.data as Movie;
+    const createdMovie: Movie = {
+      ...movieWithoutId,
+      id: data.id as string,
+    };
+
+    return createdMovie;
   } catch (error: unknown) {
     if (error instanceof AxiosError) {
       console.log(error.response, error.message);

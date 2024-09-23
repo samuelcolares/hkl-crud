@@ -23,6 +23,7 @@ import { verifyCPF } from "../../services/verify-cpf";
 import { verifyPhone } from "../../services/verify-phone";
 import { verifyEmail } from "../../services/verify-email";
 import { useStore } from "@/src/Providers/store-provider";
+import { generateTimestamp } from "@/src/utils";
 
 const emptyValues: z.infer<typeof personSchema> = {
   cpf: "",
@@ -85,6 +86,8 @@ const PersonForm = ({ defaultValues }: { defaultValues?: Person }) => {
 
       return await editPerson({
         id: defaultValues.id,
+        createdAt: defaultValues.createdAt,
+        updatedAt: generateTimestamp(),
         ...values,
       });
     } finally {

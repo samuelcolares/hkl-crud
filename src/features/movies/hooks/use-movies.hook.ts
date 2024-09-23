@@ -1,6 +1,6 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 
-import { Movie } from "../types";
+import { Movie, MovieWithoutId } from "../types";
 import { movieSchema } from "../schemas";
 import { z } from "zod";
 
@@ -10,6 +10,7 @@ import { editMovieOnDatabase } from "../services/edit-movie-on-database";
 import { addMovieToDatabase } from "../services/add-movie-to-database";
 import { getMovies } from "../queries/get-movies";
 import { deleteMovieOnDatabase } from "../services/delete-movie-on-database";
+import { generateTimestamp } from "@/src/utils";
 
 const useMovies = () => {
   const queryClient = useQueryClient();
@@ -21,7 +22,13 @@ const useMovies = () => {
   });
 
   const addMovie = async (movie: z.infer<typeof movieSchema>) => {
-    const newMovie = await addMovieToDatabase(movie);
+    const content: MovieWithoutId = {
+      ...movie,
+      createdAt: generateTimestamp(),
+      updatedAt: generateTimestamp(),
+    };
+
+    const newMovie = await addMovieToDatabase(content);
     addMovieLocal(newMovie);
   };
 

@@ -10,13 +10,21 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { useLoading } from "@/src/hooks/convinient-states.hooks";
 import LoaderCircle from "@/src/components/ui/icons/loader-circle";
 import { useStore } from "@/src/Providers/store-provider";
+import { cn } from "@/src/utils";
 
 export default function RemoveAllFavorites({
   type,
 }: {
   type: "people" | "songs" | "movies";
 }) {
-  const { resetFavoritePeople, resetFavoriteSongs, resetFavoriteMovies } = useStore();
+  const {
+    resetFavoritePeople,
+    resetFavoriteSongs,
+    resetFavoriteMovies,
+    favoriteMovies,
+    favoritePeople,
+    favoriteSongs,
+  } = useStore();
   const { loading, startLoading, stopLoading } = useLoading();
   const [open, setOpen] = React.useState(false);
 
@@ -43,7 +51,12 @@ export default function RemoveAllFavorites({
   return (
     <React.Fragment>
       <Typography
-        className="text-xs hover:underline hover:cursor-pointer"
+        className={cn(
+          "text-xs hover:underline hover:cursor-pointer",
+          type === "people" && favoritePeople && favoritePeople.length === 0 && "hidden",
+          type === "songs" && favoriteSongs && favoriteSongs.length === 0 && "hidden",
+          type === "movies" && favoriteMovies && favoriteMovies.length === 0 && "hidden"
+        )}
         onClick={handleClickOpen}
       >
         Limpar

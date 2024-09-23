@@ -84,35 +84,59 @@
   "people": [
     {
       "id": "1",
-      "name": "Angela Jackson",
-      "email": "angela.jackson@example.com",
-      "phone": "(14) 98033-8466",
-      "cpf": "738.309.390-94",
-      "avatarUrl": "/src/public/avatars/avatar-1.webp"
+      "name": "Adele Krulk",
+      "email": "adele.krulk@example.com",
+      "phone": "(11) 9322-2112",
+      "cpf": "270.004.030-98",
+      "avatarUrl": "/src/public/avatars/avatar-1.webp",
+      "createdAt": 1727055345460,
+      "updatedAt": 1727056621059,
+      "movies": ["Avatar", "De Volta para o Futuro", "Titanic"],
+      "songs": ["Turning Tables", "Sulfur", "Walk of life"]
     },
     {
       "id": "2",
-      "name": "Jessica Parker",
+      "name": "Jessica Parkers",
       "email": "jessica.parker@example.com",
-      "phone": "(25) 95442-2979",
+      "phone": "(85) 95442-2979",
       "cpf": "270.004.030-98",
-      "avatarUrl": "/src/public/avatars/avatar-2.webp"
+      "avatarUrl": "/src/public/avatars/avatar-2.webp",
+      "createdAt": 1727055345460,
+      "updatedAt": 1727056621059,
+      "movies": ["Avatar", "De Volta para o Futuro", "Titanic"],
+      "songs": ["Turning Tables", "Sulfur", "Walk of life"]
     },
     {
       "id": "3",
-      "name": "Gabriela Miller",
+      "name": "Gabriela Millers",
       "email": "gabriela.miller@example.com",
       "phone": "(65) 91857-3775",
       "cpf": "159.522.400-97",
-      "avatarUrl": "/src/public/avatars/avatar-3.webp"
+      "avatarUrl": "/src/public/avatars/avatar-3.webp",
+      "createdAt": 1727055345460,
+      "updatedAt": 1727056573372,
+      "movies": [
+        "O Poderoso Chefão",
+        "Jurassic Park: O Parque dos Dinossauros",
+        "Matrix"
+      ],
+      "songs": ["Nightmare", "Vermilion, Pt. 2", "Given to Fly"]
     },
     {
       "id": "4",
-      "name": "Craig Jacobs",
+      "name": "Craig Jacob",
       "email": "craig.jacobs@example.com",
       "phone": "(42) 93662-8695",
       "cpf": "431.166.360-95",
-      "avatarUrl": "/src/public/avatars/avatar-4.webp"
+      "avatarUrl": "/src/public/avatars/avatar-4.webp",
+      "createdAt": 1727055345460,
+      "updatedAt": 1727056585335,
+      "movies": ["Titanic", "Duro de Matar", "O Resgate do Soldado Ryan"],
+      "songs": [
+        "O Senhor dos Anéis: O Retorno do Rei",
+        "Um Sonho de Liberdade",
+        "Homem-Aranha: Sem Volta Para Casa"
+      ]
     },
     {
       "id": "5",
@@ -120,7 +144,15 @@
       "email": "calvin.woods@example.com",
       "phone": "(52) 99071-5281",
       "cpf": "971.444.090-42",
-      "avatarUrl": "/src/public/avatars/avatar-5.webp"
+      "avatarUrl": "/src/public/avatars/avatar-5.webp",
+      "createdAt": 1727055332278,
+      "updatedAt": 1727055332278,
+      "movies": [
+        "Coração Valente",
+        "Homem-Aranha: Sem Volta Para Casa",
+        "O Senhor dos Anéis: O Retorno do Rei"
+      ],
+      "songs": ["Turning Tables", "I Appear Missing", "Walk of life"]
     },
     {
       "id": "6",
@@ -128,7 +160,11 @@
       "email": "richard.kelley@example.com",
       "phone": "(56) 92948-7151",
       "cpf": "366.519.400-82",
-      "avatarUrl": "/src/public/avatars/avatar-6.webp"
+      "avatarUrl": "/src/public/avatars/avatar-6.webp",
+      "createdAt": 1727055332278,
+      "updatedAt": 1727055332278,
+      "movies": ["Avatar", "Duro de Matar", "De Volta para o Futuro"],
+      "songs": ["O Rei Leão", "Toy Story", "Interestelar"]
     },
     {
       "id": "7",
@@ -136,7 +172,15 @@
       "email": "diane.thomas@example.com",
       "phone": "(17) 99321-1700",
       "cpf": "059.987.120-21",
-      "avatarUrl": "/src/public/avatars/avatar-7.webp"
+      "avatarUrl": "/src/public/avatars/avatar-7.webp",
+      "createdAt": 1727055332278,
+      "updatedAt": 1727055332278,
+      "movies": [
+        "Matrix",
+        "O Exterminador do Futuro",
+        "De Volta para o Futuro"
+      ],
+      "songs": ["Vermilion, Pt. 2", "Perfect Strangers", "Given to Fly"]
     },
     {
       "id": "8",
@@ -144,7 +188,15 @@
       "email": "elizabeth.bush@example.com",
       "phone": "(38) 96543-4003",
       "cpf": "539.706.150-62",
-      "avatarUrl": "/src/public/avatars/avatar-8.webp"
+      "avatarUrl": "/src/public/avatars/avatar-8.webp",
+      "createdAt": 1727055345460,
+      "updatedAt": 1727055345460,
+      "movies": [
+        "Pantera Negra",
+        "Frozen: Uma Aventura Congelante",
+        "Toy Story"
+      ],
+      "songs": ["Turning Tables", "Orange Moon", "Soldier of Fortune"]
     },
     {
       "id": "9",
@@ -152,7 +204,15 @@
       "email": "laurie.baker@example.com",
       "phone": "(18) 92134-1142",
       "cpf": "473.123.860-91",
-      "avatarUrl": "/src/public/avatars/avatar-9.webp"
+      "avatarUrl": "/src/public/avatars/avatar-9.webp",
+      "createdAt": 1727055345460,
+      "updatedAt": 1727055345460,
+      "movies": ["Titanic", "Gladiador", "O Exterminador do Futuro"],
+      "songs": [
+        "Homem-Aranha: Sem Volta Para Casa",
+        "Interestelar",
+        "Vingadores: Ultimato"
+      ]
     },
     {
       "id": "10",
@@ -160,7 +220,15 @@
       "email": "timothy.townsend@example.com",
       "phone": "(87) 93872-5578",
       "cpf": "880.841.290-31",
-      "avatarUrl": "/src/public/avatars/avatar-10.webp"
+      "avatarUrl": "/src/public/avatars/avatar-10.webp",
+      "createdAt": 1727055345460,
+      "updatedAt": 1727055345460,
+      "movies": [
+        "Harry Potter e a Pedra Filosofal",
+        "Piratas do Caribe",
+        "O Rei Leão"
+      ],
+      "songs": ["No One Knows", "Skyfall", "Given to Fly"]
     },
     {
       "id": "11",
@@ -168,7 +236,15 @@
       "email": "destiny.murray@example.com",
       "phone": "(56) 97019-8052",
       "cpf": "703.009.060-80",
-      "avatarUrl": "/src/public/avatars/avatar-11.webp"
+      "avatarUrl": "/src/public/avatars/avatar-11.webp",
+      "createdAt": 1727055345460,
+      "updatedAt": 1727055345460,
+      "movies": [
+        "Pulp Fiction: Tempo de Violência",
+        "Forrest Gump: O Contador de Histórias",
+        "O Cavaleiro das Trevas"
+      ],
+      "songs": ["Turning Tables", "Brothers in Arms", "Disasterpiece"]
     },
     {
       "id": "12",
@@ -176,7 +252,15 @@
       "email": "lydia.lopez@example.com",
       "phone": "(66) 94807-4748",
       "cpf": "852.711.420-86",
-      "avatarUrl": "/src/public/avatars/avatar-12.webp"
+      "avatarUrl": "/src/public/avatars/avatar-12.webp",
+      "createdAt": 1727055345460,
+      "updatedAt": 1727055345460,
+      "movies": [
+        "Harry Potter e a Pedra Filosofal",
+        "Piratas do Caribe",
+        "Avatar"
+      ],
+      "songs": ["Chokehold", "Appletree", "Sulfur"]
     },
     {
       "id": "13",
@@ -184,7 +268,15 @@
       "email": "bradley.carpenter@example.com",
       "phone": "(15) 91528-4468",
       "cpf": "380.884.360-87",
-      "avatarUrl": "/src/public/avatars/avatar-13.webp"
+      "avatarUrl": "/src/public/avatars/avatar-13.webp",
+      "createdAt": 1727055345460,
+      "updatedAt": 1727055345460,
+      "movies": [
+        "O Cavaleiro das Trevas",
+        "A Origem",
+        "O Senhor dos Anéis: O Retorno do Rei"
+      ],
+      "songs": ["Man i is", "The Summoning", "Appletree"]
     },
     {
       "id": "14",
@@ -192,7 +284,11 @@
       "email": "nicholas.nguyen@example.com",
       "phone": "(71) 98880-9903",
       "cpf": "098.726.800-78",
-      "avatarUrl": "/src/public/avatars/avatar-14.webp"
+      "avatarUrl": "/src/public/avatars/avatar-14.webp",
+      "createdAt": 1727055345460,
+      "updatedAt": 1727055345460,
+      "movies": ["Piratas do Caribe", "Duro de Matar", "Toy Story"],
+      "songs": ["I Appear Missing", "Sign Of The Times", "Painkiller"]
     },
     {
       "id": "15",
@@ -200,7 +296,15 @@
       "email": "mrs..amanda@example.com",
       "phone": "(40) 97227-3481",
       "cpf": "004.277.550-77",
-      "avatarUrl": "/src/public/avatars/avatar-15.webp"
+      "avatarUrl": "/src/public/avatars/avatar-15.webp",
+      "createdAt": 1727055345460,
+      "updatedAt": 1727055345460,
+      "movies": [
+        "O Silêncio dos Inocentes",
+        "A Lista de Schindler",
+        "Frozen: Uma Aventura Congelante"
+      ],
+      "songs": ["Vingadores: Ultimato", "Gladiador", "Duro de Matar"]
     },
     {
       "id": "16",
@@ -208,7 +312,15 @@
       "email": "pamela.bailey@example.com",
       "phone": "(70) 92563-2843",
       "cpf": "666.061.700-01",
-      "avatarUrl": "/src/public/avatars/avatar-16.webp"
+      "avatarUrl": "/src/public/avatars/avatar-16.webp",
+      "createdAt": 1727055345460,
+      "updatedAt": 1727055345460,
+      "movies": [
+        "Harry Potter e a Pedra Filosofal",
+        "Toy Story",
+        "Homem-Aranha: Sem Volta Para Casa"
+      ],
+      "songs": ["Sulfur", "Perfect Strangers", "The Summoning"]
     },
     {
       "id": "17",
@@ -216,7 +328,11 @@
       "email": "cindy.martinez@example.com",
       "phone": "(59) 95385-6573",
       "cpf": "175.530.040-90",
-      "avatarUrl": "/src/public/avatars/avatar-17.webp"
+      "avatarUrl": "/src/public/avatars/avatar-17.webp",
+      "createdAt": 1727055332278,
+      "updatedAt": 1727055332278,
+      "movies": ["Pantera Negra", "Um Sonho de Liberdade", "Interestelar"],
+      "songs": ["Black", "Better Man", "No One Knows"]
     },
     {
       "id": "18",
@@ -224,7 +340,15 @@
       "email": "erica.simpson@example.com",
       "phone": "(25) 92319-8109",
       "cpf": "920.310.210-87",
-      "avatarUrl": "/src/public/avatars/avatar-18.webp"
+      "avatarUrl": "/src/public/avatars/avatar-18.webp",
+      "createdAt": 1727055345460,
+      "updatedAt": 1727055345460,
+      "movies": [
+        "O Senhor dos Anéis: O Retorno do Rei",
+        "Clube da Luta",
+        "Gladiador"
+      ],
+      "songs": ["Man i is", "Fortress", "Appletree"]
     },
     {
       "id": "19",
@@ -232,7 +356,11 @@
       "email": "joy.jackson@example.com",
       "phone": "(26) 93293-9248",
       "cpf": "923.409.970-20",
-      "avatarUrl": "/src/public/avatars/avatar-19.webp"
+      "avatarUrl": "/src/public/avatars/avatar-19.webp",
+      "createdAt": 1727055345460,
+      "updatedAt": 1727055345460,
+      "movies": ["O Cavaleiro das Trevas", "A Origem", "Gladiador"],
+      "songs": ["Black", "Nightmare", "Didn't Cha Know"]
     },
     {
       "id": "20",
@@ -240,159 +368,227 @@
       "email": "michelle.miller@example.com",
       "phone": "(71) 97956-4757",
       "cpf": "846.731.290-40",
-      "avatarUrl": "/src/public/avatars/avatar-20.webp"
+      "avatarUrl": "/src/public/avatars/avatar-20.webp",
+      "createdAt": 1727055345460,
+      "updatedAt": 1727055345460,
+      "movies": [
+        "Star Wars: Episódio IV - Uma Nova Esperança",
+        "Duro de Matar",
+        "Jurassic Park: O Parque dos Dinossauros"
+      ],
+      "songs": ["Soldier of Fortune", "Walk of life", "The Summoning"]
     }
   ],
   "movies": [
     {
       "id": "f10f",
       "title": "O Poderoso Chefão",
-      "genre": "Crime"
+      "genre": "Crime",
+      "createdAt": 1727055675227,
+      "updatedAt": 1727055675227
     },
     {
       "id": "0203",
       "title": "Star Wars: Episódio IV - Uma Nova Esperança",
-      "genre": "Ficção Científica"
+      "genre": "Ficção Científica",
+      "createdAt": 1727055675227,
+      "updatedAt": 1727055675227
     },
     {
       "id": "c45f",
       "title": "Jurassic Park: O Parque dos Dinossauros",
-      "genre": "Aventura"
+      "genre": "Aventura",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "ce7a",
       "title": "O Cavaleiro das Trevas",
-      "genre": "Ação"
+      "genre": "Ação",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "7510",
       "title": "Titanic",
-      "genre": "Romance"
+      "genre": "Romance",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "5477",
       "title": "Pulp Fiction: Tempo de Violência",
-      "genre": "Crime"
+      "genre": "Crime",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "07a2",
       "title": "Forrest Gump: O Contador de Histórias",
-      "genre": "Drama"
+      "genre": "Drama",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "1bd6",
       "title": "Avatar",
-      "genre": "Fantasia"
+      "genre": "Fantasia",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "1e37",
       "title": "Vingadores: Ultimato",
-      "genre": "Ação"
+      "genre": "Ação",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "4dac",
       "title": "O Rei Leão",
-      "genre": "Animação"
+      "genre": "Animação",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "d329",
       "title": "O Senhor dos Anéis: O Retorno do Rei",
-      "genre": "Fantasia"
+      "genre": "Fantasia",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "5e5b",
       "title": "Piratas do Caribe",
-      "genre": "Aventura"
+      "genre": "Aventura",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "2f1a",
       "title": "A Origem",
-      "genre": "Ficção Científica"
+      "genre": "Ficção Científica",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "338b",
       "title": "Harry Potter e a Pedra Filosofal",
-      "genre": "Fantasia"
+      "genre": "Fantasia",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "9e98",
       "title": "De Volta para o Futuro",
-      "genre": "Ficção Científica"
+      "genre": "Ficção Científica",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "f2d6",
       "title": "Homem-Aranha: Sem Volta Para Casa",
-      "genre": "Ação"
+      "genre": "Ação",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "51d1",
       "title": "Frozen: Uma Aventura Congelante",
-      "genre": "Animação"
+      "genre": "Animação",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "4360",
       "title": "Toy Story",
-      "genre": "Animação"
+      "genre": "Animação",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "5d19",
       "title": "O Exterminador do Futuro",
-      "genre": "Ficção Científica"
+      "genre": "Ficção Científica",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "57ea",
       "title": "Duro de Matar",
-      "genre": "Ação"
+      "genre": "Ação",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "7f07",
       "title": "Pantera Negra",
-      "genre": "Ação"
+      "genre": "Ação",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "35d3",
       "title": "Clube da Luta",
-      "genre": "Drama"
+      "genre": "Drama",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "cdca",
       "title": "Interestelar",
-      "genre": "Ficção Científica"
+      "genre": "Ficção Científica",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "e725",
       "title": "Matrix",
-      "genre": "Ficção Científica"
+      "genre": "Ficção Científica",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "7e1a",
       "title": "Gladiador",
-      "genre": "Ação"
+      "genre": "Ação",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "dc3f",
       "title": "O Silêncio dos Inocentes",
-      "genre": "Suspense"
+      "genre": "Suspense",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "150b",
       "title": "O Resgate do Soldado Ryan",
-      "genre": "Guerra"
+      "genre": "Guerra",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "2de5",
       "title": "A Lista de Schindler",
-      "genre": "Biografia"
+      "genre": "Biografia",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "7027",
       "title": "Coração Valente",
-      "genre": "Drama"
+      "genre": "Drama",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     },
     {
       "id": "e4cc",
       "title": "Um Sonho de Liberdade",
-      "genre": "Drama"
+      "genre": "Drama",
+      "createdAt": 1727055675228,
+      "updatedAt": 1727055675228
     }
   ],
   "songs": [
@@ -400,169 +596,225 @@
       "id": "ac7fad56",
       "name": "Skyfall",
       "genre": "Pop",
-      "singerOrBand": "Adele"
+      "singerOrBand": "Adele",
+      "createdAt": 1727055734467,
+      "updatedAt": 1727055734467
     },
     {
       "id": "21cb0f33",
       "name": "Turning Tables",
       "genre": "Pop",
-      "singerOrBand": "Adele"
+      "singerOrBand": "Adele",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "ae08aa54",
       "name": "Nightmare",
       "genre": "Metal",
-      "singerOrBand": "Avenged Sevenfold"
+      "singerOrBand": "Avenged Sevenfold",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "bbf79814",
       "name": "Perfect Strangers",
       "genre": "Rock",
-      "singerOrBand": "Deep Purple"
+      "singerOrBand": "Deep Purple",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "f59d4bab",
       "name": "Soldier of Fortune",
       "genre": "Rock",
-      "singerOrBand": "Deep Purple"
+      "singerOrBand": "Deep Purple",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "f0060b08",
       "name": "Brothers in Arms",
       "genre": "Rock",
-      "singerOrBand": "Dire Straits"
+      "singerOrBand": "Dire Straits",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "846568ef",
       "name": "Walk of life",
       "genre": "Rock",
-      "singerOrBand": "Dire Straits"
+      "singerOrBand": "Dire Straits",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "1eb33fc7",
       "name": "Didn't Cha Know",
       "genre": "R&B",
-      "singerOrBand": "Erykah Badu"
+      "singerOrBand": "Erykah Badu",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "32a340c1",
       "name": "Orange Moon",
       "genre": "R&B",
-      "singerOrBand": "Erykah Badu"
+      "singerOrBand": "Erykah Badu",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "2747215e",
       "name": "Appletree",
       "genre": " R&B",
-      "singerOrBand": "Erykah Badu"
+      "singerOrBand": "Erykah Badu",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "197436ef",
       "name": "West Coast",
       "genre": "Pop",
-      "singerOrBand": "Lana Del Rey"
+      "singerOrBand": "Lana Del Rey",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "f5ebd523",
       "name": "Man i is",
       "genre": "Rap",
-      "singerOrBand": "Logic"
+      "singerOrBand": "Logic",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "0a83a74c",
       "name": "Under Presure",
       "genre": "Rap",
-      "singerOrBand": "Logic"
+      "singerOrBand": "Logic",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "8225c31f",
       "name": "Black",
       "genre": "Rock",
-      "singerOrBand": "Pearl Jam"
+      "singerOrBand": "Pearl Jam",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "a5657412",
       "name": "Given to Fly",
       "genre": "Rock",
-      "singerOrBand": "Pearl Jam"
+      "singerOrBand": "Pearl Jam",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "2329fef7",
       "name": "Better Man",
       "genre": "Rock",
-      "singerOrBand": "Pearl Jam"
+      "singerOrBand": "Pearl Jam",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "8e9738b0",
       "name": "Fortress",
       "genre": "Rock",
-      "singerOrBand": "Queens of the Stone Age"
+      "singerOrBand": "Queens of the Stone Age",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "8ea0b66d",
       "name": "No One Knows",
       "genre": "Rock",
-      "singerOrBand": "Queens of the Stone Age"
+      "singerOrBand": "Queens of the Stone Age",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "8d028992",
       "name": "I Appear Missing",
       "genre": "Rock",
-      "singerOrBand": "Queens of the Stone Age"
+      "singerOrBand": "Queens of the Stone Age",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "613f6102",
       "name": "Alkaline",
       "genre": "Metal",
-      "singerOrBand": "Sleep Token"
+      "singerOrBand": "Sleep Token",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "765550c9",
       "name": "Chokehold",
       "genre": "Metal",
-      "singerOrBand": "Sleep Token"
+      "singerOrBand": "Sleep Token",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "49fa0e05",
       "name": "The Summoning",
       "genre": "Metal",
-      "singerOrBand": "Sleep Token"
+      "singerOrBand": "Sleep Token",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "dc772edb",
       "name": "Disasterpiece",
       "genre": "Metal",
-      "singerOrBand": "Slipknot"
+      "singerOrBand": "Slipknot",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "ee7510a7",
       "name": "Vermilion, Pt. 2",
       "genre": "Metal",
-      "singerOrBand": "Slipknot"
+      "singerOrBand": "Slipknot",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "0f652d03",
       "name": "Sulfur",
       "genre": "Metal",
-      "singerOrBand": "Slipknot"
+      "singerOrBand": "Slipknot",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "d1b784a8",
       "name": "Sign Of The Times",
       "genre": "Rock",
-      "singerOrBand": "Three Days Grace"
+      "singerOrBand": "Three Days Grace",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "ec839df9",
       "name": "Painkiller",
       "genre": "Rock",
-      "singerOrBand": "Three Days Grace"
+      "singerOrBand": "Three Days Grace",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     },
     {
       "id": "9d36f689",
       "name": "90210",
       "genre": "Rap",
-      "singerOrBand": "Travis Scott"
+      "singerOrBand": "Travis Scott",
+      "createdAt": 1727055734468,
+      "updatedAt": 1727055734468
     }
   ]
 }

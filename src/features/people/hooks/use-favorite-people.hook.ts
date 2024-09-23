@@ -107,7 +107,7 @@ export const useFavoritePeople = () => {
     state.some((item) => item.id === person.id);
 
   return {
-    favoritePeople: state,
+    favoritePeople: state ?? [],
     favoritePerson,
     resetFavoritePeople,
     updatePersonOnLocalStorage,

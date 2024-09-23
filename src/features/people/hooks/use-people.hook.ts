@@ -1,19 +1,17 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { getPeople } from "../queries/get-people";
-import { Person } from "../types";
+import { Person, PersonWithoutId } from "../types";
 import { personSchema } from "../schemas";
 import { z } from "zod";
 import { addPersonToDatabase } from "../services/add-person-to-database";
 import { editPersonOnDatabase } from "../services/edit-person-on-database";
 import { deletePersonOnDatabase } from "../services/delete-person-on-database";
 import { useStore } from "@/src/Providers/store-provider";
+import { generateTimestamp } from "@/src/utils";
 
 const usePeople = () => {
   const queryClient = useQueryClient();
-  const {
-    updatePersonOnLocalStorage,
-    removePersonOnLocalStorage,
-  } = useStore();
+  const { updatePersonOnLocalStorage, removePersonOnLocalStorage } = useStore();
   const { data: people = [], status } = useQuery<Person[], Error>({
     queryKey: ["people"],
     queryFn: getPeople,
@@ -21,7 +19,12 @@ const usePeople = () => {
   });
 
   const addPerson = async (person: z.infer<typeof personSchema>) => {
-    const newPerson = await addPersonToDatabase(person);
+    const content: PersonWithoutId = {
+      ...person,
+      createdAt: generateTimestamp(),
+      updatedAt: generateTimestamp(),
+    };
+    const newPerson = await addPersonToDatabase(content);
     addPersonLocal(newPerson);
   };
 

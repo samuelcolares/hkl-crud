@@ -18,6 +18,7 @@ import { Movie } from "../../types";
 import { movieSchema } from "../../schemas";
 import useMovies from "../../hooks/use-movies.hook";
 import { movieGenres } from "@/src/utils/constants";
+import { generateTimestamp } from "@/src/utils";
 
 const emptyValues: z.infer<typeof movieSchema> = {
   title: "",
@@ -52,6 +53,8 @@ const MovieForm = ({ defaultValues }: { defaultValues?: Movie }) => {
 
       return await editMovie({
         id: defaultValues.id,
+        createdAt: defaultValues.createdAt,
+        updatedAt: generateTimestamp(),
         ...values,
       });
     } finally {

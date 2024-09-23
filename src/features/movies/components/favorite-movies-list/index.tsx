@@ -8,6 +8,7 @@ import { ListSubheader, Typography } from "@mui/material";
 import { useLocation, useRouter } from "@tanstack/react-router";
 import { cn } from "@/src/utils";
 import RemoveAllFavorites from "@/src/components/favorite/remove-all";
+import systemMessages from "@/src/utils/constants";
 
 export default function FavoriteMoviesList({
   variant,
@@ -53,8 +54,6 @@ export default function FavoriteMoviesList({
             secondaryAction={<FavoriteIconButton type="movies" item={movie} />}
             className="py-1 gap-4 hover:bg-black/30"
           >
-            {/* <ListItemButton>
-              </ListItemButton> */}
             <ListItemText
               id={movie.id}
               sx={{
@@ -78,7 +77,7 @@ export default function FavoriteMoviesList({
         <>
           <ListItem className="py-1">
             <ListItemText
-              primary={"Nenhuma filme foi favoritado 🥺"}
+              primary={`${systemMessages.other.noFavorites} 🥺`}
               className="text-white text-center"
             />
           </ListItem>
@@ -91,7 +90,7 @@ export default function FavoriteMoviesList({
               onClick={routerTo}
             >
               <ListItemText
-                primary={"Favorite uma música"}
+                primary={"Favorite um filme"}
                 className="text-white text-center"
               />
             </ListItemButton>

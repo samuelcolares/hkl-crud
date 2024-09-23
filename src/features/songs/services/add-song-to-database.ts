@@ -1,24 +1,27 @@
-import { z } from "zod";
-import { songSchema } from "../schemas";
 import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
-import { Song } from "../types";
+import { Song, SongWithoutId } from "../types";
 import { simulateServerDelay } from "@/src/utils";
 
-export const addSongToDatabase = async (song: z.infer<typeof songSchema>) => {
+export const addSongToDatabase = async (songWithoutId: SongWithoutId) => {
   try {
     const withDelay = async () => {
       await simulateServerDelay();
-      return await axios.post("http://localhost:5000/songs", song);
+      return await axios.post("http://localhost:5000/songs", songWithoutId);
     };
 
-    const data = await toast.promise(withDelay(), {
+    const { data } = await toast.promise(withDelay(), {
       loading: `Salvando música...`,
       success: `Música salva no banco de dados!`,
-      error: `Erro ao adicionar ${song.name} ao banco de dados.`,
+      error: `Erro ao adicionar ${songWithoutId.name} ao banco de dados.`,
     });
 
-    return data.data as Song;
+    const createdSong: Song = {
+      ...songWithoutId,
+      id: data.id as string,
+    };
+
+    return createdSong;
   } catch (error: unknown) {
     if (error instanceof AxiosError) {
       console.log(error.response, error.message);

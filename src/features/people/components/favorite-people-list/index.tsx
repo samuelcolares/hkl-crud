@@ -11,13 +11,17 @@ import { ListSubheader, Typography } from "@mui/material";
 import { useLocation, useRouter } from "@tanstack/react-router";
 import { cn } from "@/src/utils";
 import RemoveAllFavorites from "@/src/components/favorite/remove-all";
+import systemMessages from "@/src/utils/constants";
 
 export default function FavoritePeopleList({
   variant,
+  className,
 }: {
   variant: "md" | "lg";
+  className?: string;
 }) {
   const { favoritePeople } = useStore();
+
   const router = useRouter();
 
   const routerTo = () => {
@@ -31,6 +35,7 @@ export default function FavoritePeopleList({
     <List
       sx={{
         width: "100%",
+        minWidth: 300,
         maxWidth: variant === "md" ? 300 : 450,
         maxHeight: variant === "md" ? 360 : 550,
         overflow: "auto",
@@ -38,52 +43,56 @@ export default function FavoritePeopleList({
         border: 1,
         backdropFilter: "blur(5px)",
       }}
-      className="border-white rounded-md"
+      className={cn("border-white rounded-md max-xl:max-w-full", className)}
       subheader={
         <ListSubheader className="bg-primary text-white font-bold flex items-center justify-between p-4">
           <Typography>
             Pessoas Favoritas{" "}
-            {favoritePeople.length > 0 && `(${favoritePeople.length})`}
+            {favoritePeople &&
+              favoritePeople.length > 0 &&
+              `(${favoritePeople.length})`}
           </Typography>
           <RemoveAllFavorites type="people" />
         </ListSubheader>
       }
     >
-      {favoritePeople.map((person) => {
-        return (
-          <ListItem
-            key={person.id}
-            secondaryAction={<FavoriteIconButton type="person" item={person} />}
-            className="py-1 gap-4 hover:bg-black/30"
-          >
-            {/* <ListItemButton>
-              </ListItemButton> */}
-            <ListItemAvatar>
-              <Avatar
-                alt={person.name + person.id}
-                src={person.avatarUrl}
-                className={cn("w-20 h-20", variant === "md" && "w-12 h-12")}
-              />
-            </ListItemAvatar>
-            <ListItemText
-              id={person.id}
-              sx={{
-                "& .MuiTypography-root": {
-                  fontSize: variant === "md" ? "1rem" : "1.5rem",
-                },
-              }}
-              primary={person.name}
-              className="text-white"
-            />
-          </ListItem>
-        );
-      })}
+      {favoritePeople &&
+        favoritePeople.map((person) => {
+          return (
+            <ListItem
+              key={person.id}
+              secondaryAction={
+                <FavoriteIconButton type="person" item={person} />
+              }
+              className="py-1 gap-4 hover:bg-black/30"
+            >
 
-      {favoritePeople.length === 0 && (
+              <ListItemAvatar>
+                <Avatar
+                  alt={person.name + person.id}
+                  src={person.avatarUrl}
+                  className={cn("w-20 h-20", variant === "md" && "w-12 h-12")}
+                />
+              </ListItemAvatar>
+              <ListItemText
+                id={person.id}
+                sx={{
+                  "& .MuiTypography-root": {
+                    fontSize: variant === "md" ? "1rem" : "1.5rem",
+                  },
+                }}
+                primary={person.name}
+                className="text-white"
+              />
+            </ListItem>
+          );
+        })}
+
+      {favoritePeople && favoritePeople.length === 0 && (
         <>
           <ListItem className="py-1">
             <ListItemText
-              primary={"Nenhuma pessoa foi favoritada 😥"}
+              primary={`${systemMessages.other.noFavorites} 😥`}
               className="text-white text-center"
             />
           </ListItem>

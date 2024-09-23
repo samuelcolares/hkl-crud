@@ -7,6 +7,7 @@ import PersonForm from "./form";
 import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import PersonIcon from "@mui/icons-material/PersonAddAlt1";
+import { cn } from "@/src/utils";
 
 type PersonDialogProps = {
   defaultValues?: Person;
@@ -35,7 +36,7 @@ const PersonDialog: React.FC<PersonDialogProps> = ({
         <Button
           variant="outlined"
           onClick={handleClickOpen}
-          className="border-primary text-white hover:bg-primary hover:border-white flex ml-auto"
+          className={cn("border-primary text-white hover:bg-primary hover:border-white flex ml-auto", className)}
           endIcon={<PersonIcon />}
         >
           Adicionar Pessoa

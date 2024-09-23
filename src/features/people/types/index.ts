@@ -7,7 +7,11 @@ export type Person = {
   avatarUrl: string;
   movies: string[];
   songs: string[];
+  createdAt: number;
+  updatedAt: number;
 };
+
+export type PersonWithoutId = Omit<Person, "id">;
 
 export type Avatar = {
   id: string;

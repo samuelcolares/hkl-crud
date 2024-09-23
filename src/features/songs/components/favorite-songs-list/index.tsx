@@ -8,6 +8,7 @@ import { ListSubheader, Typography } from "@mui/material";
 import { useLocation, useRouter } from "@tanstack/react-router";
 import { cn } from "@/src/utils";
 import RemoveAllFavorites from "@/src/components/favorite/remove-all";
+import systemMessages from "@/src/utils/constants";
 
 export default function FavoriteSongsList({
   variant,
@@ -78,7 +79,7 @@ export default function FavoriteSongsList({
         <>
           <ListItem className="py-1">
             <ListItemText
-              primary={"Nenhuma música foi favoritada 😭"}
+              primary={`${systemMessages.other.noFavorites} 😭`}
               className="text-white text-center"
             />
           </ListItem>

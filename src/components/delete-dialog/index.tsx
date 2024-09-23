@@ -13,6 +13,7 @@ import LoaderCircle from "@/src/components/ui/icons/loader-circle";
 import useSongs from "@/src/features/songs/hooks/use-songs.hook";
 import { Type } from "@/src/types";
 import usePeople from "@/src/features/people/hooks/use-people.hook";
+import useMovies from "@/src/features/movies/hooks/use-movies.hook";
 
 type DeleteDialogProps = {
   id: string;
@@ -21,7 +22,7 @@ type DeleteDialogProps = {
 
 export const DeleteDialog: React.FC<DeleteDialogProps> = ({ id, type }) => {
   const { deleteSong } = useSongs();
-  // const { deleteMovie } = useMovies();
+  const { deleteMovie } = useMovies();
   const { deletePerson } = usePeople();
   const { loading, startLoading, stopLoading } = useLoading();
   const [open, setOpen] = React.useState(false);
@@ -39,7 +40,7 @@ export const DeleteDialog: React.FC<DeleteDialogProps> = ({ id, type }) => {
       startLoading();
       if (type === "songs") return await deleteSong(id);
       if (type === "people") return await deletePerson(id);
-      // if (type === "movies") return await deleteMovie(id);
+      if (type === "movies") return await deleteMovie(id);
     } finally {
       setOpen(false);
       stopLoading();

@@ -18,6 +18,7 @@ import { Song } from "../../types";
 import { songSchema } from "../../schemas";
 import useSongs from "../../hooks/use-songs.hook";
 import { musicGenres } from "@/src/utils/constants";
+import { generateTimestamp } from "@/src/utils";
 
 const emptyValues: z.infer<typeof songSchema> = {
   name: "",
@@ -54,6 +55,8 @@ const SongForm = ({ defaultValues }: { defaultValues?: Song }) => {
 
       return await editSong({
         id: defaultValues.id,
+        createdAt: defaultValues.createdAt,
+        updatedAt: generateTimestamp(),
         ...values,
       });
     } finally {
